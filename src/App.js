@@ -1,4 +1,5 @@
 import "./App.scss";
+import Todo from "./components/Todo";
 
 /* eslint-disable jsx-a11y/no-redundant-roles */
 function App(props) {
@@ -45,6 +46,12 @@ function App(props) {
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading"
       >
+        <Todo name="eat"/>
+        <Todo name="sleep"/>
+        <Todo name="repeat"/>
+        <Todo name="write"/>
+        <Todo name="listen"/>
+
         <li className="todo stack-small">
           <div className="c-cb">
             <input id="todo-1" type="checkbox" />

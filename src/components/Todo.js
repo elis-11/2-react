@@ -16,7 +16,6 @@ function Todo(props) {
     });
     return ref.current;
   }
-  
 
   function handleChange(e) {
     setNewName(e.target.value);
@@ -76,11 +75,11 @@ function Todo(props) {
         </label>
       </div>
       <div className="btn-group">
-        <button 
-        type="button" 
-        className="btn" 
-        onClick={() => setEditing(true)}
-        ref={editButtonRef}
+        <button
+          type="button"
+          className="btn"
+          onClick={() => setEditing(true)}
+          ref={editButtonRef}
         >
           Edit <span className="visually-hidden">{props.name}</span>
         </button>
@@ -104,7 +103,6 @@ function Todo(props) {
       editButtonRef.current.focus();
     }
   }, [wasEditing, isEditing]);
-  
 
   return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
 }

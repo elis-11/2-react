@@ -59,9 +59,14 @@ function App(props) {
     />
   ));
 
-  const filterList = FILTER_NAMES.map((name) => (
-    <FilterButton key={name} name={name} />
-  ));
+  const filterList = FILTER_NAMES.map(name => (
+    <FilterButton
+      key={name}
+      name={name}
+      isPressed={name === filter}
+      setFilter={setFilter}
+    />
+  ));  
 
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid, name: name, completed: false };

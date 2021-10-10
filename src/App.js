@@ -5,7 +5,6 @@ import FilterButton from "./components/FilterButton";
 import Form from "./components/Form";
 import Todo from "./components/Todo";
 
-
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
@@ -19,9 +18,11 @@ function App(props) {
   ));
 
   function addTask(name) {
-    const newTask = { id: "todo-" +nanoid, name: name, completed: false };
+    const newTask = { id: "todo-" + nanoid, name: name, completed: false };
     setTasks([...tasks, newTask]);
   }
+  const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
+  const headingText = `${taskList.length} tasks remaining`;
 
   return (
     <div className="todoapp stack-large">

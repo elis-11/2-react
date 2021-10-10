@@ -1,22 +1,25 @@
+import React, { useState } from "react";
 import "./App.scss";
 import FilterButton from "./components/FilterButton";
 import Form from "./components/Form";
 import Todo from "./components/Todo";
 
+const [tasks, setTasks] = useState(props.tasks);
+
 /* eslint-disable jsx-a11y/no-redundant-roles */
 function App(props) {
-
-  function addTask(name){
-    alert(name)
+  function addTask(name) {
+    alert(name);
   }
 
-  const taskList = props.tasks.map((task) =>
-   <Todo 
-   id={task.id} 
-   name={task.name} 
-   completed={task.completed} 
-   key={task.id} 
-   />);
+  const taskList = tasks.map((task) => (
+    <Todo
+      id={task.id}
+      name={task.name}
+      completed={task.completed}
+      key={task.id}
+    />
+  ));
 
   return (
     <div className="todoapp stack-large">
@@ -24,11 +27,11 @@ function App(props) {
       <Form addTask={addTask} />
 
       <div className="filters btn-group stack-exception">
-      <FilterButton />
-      <FilterButton />
-      <FilterButton />
+        <FilterButton />
+        <FilterButton />
+        <FilterButton />
       </div>
-      
+
       <h2 id="list-heading">3 tasks remaining</h2>
       <ul
         role="list"

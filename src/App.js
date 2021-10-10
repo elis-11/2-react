@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-redundant-roles */
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { nanoid } from "nanoid";
 import "./App.scss";
 import FilterButton from "./components/FilterButton";
@@ -49,27 +49,27 @@ function App(props) {
   }
 
   const taskList = tasks
-  .filter(FILTER_MAP[filter])
-  .map((task) => (
-    <Todo
-      id={task.id}
-      name={task.name}
-      completed={task.completed}
-      key={task.id}
-      toggleTaskCompleted={toggleTaskCompleted}
-      deleteTask={deleteTask}
-      editTask={editTask}
-    />
-  ));
+    .filter(FILTER_MAP[filter])
+    .map((task) => (
+      <Todo
+        id={task.id}
+        name={task.name}
+        completed={task.completed}
+        key={task.id}
+        toggleTaskCompleted={toggleTaskCompleted}
+        deleteTask={deleteTask}
+        editTask={editTask}
+      />
+    ));
 
-  const filterList = FILTER_NAMES.map(name => (
+  const filterList = FILTER_NAMES.map((name) => (
     <FilterButton
       key={name}
       name={name}
       isPressed={name === filter}
       setFilter={setFilter}
     />
-  ));  
+  ));
 
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid, name: name, completed: false };
@@ -78,6 +78,8 @@ function App(props) {
   const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
   const headingText = `${taskList.length} tasks remaining`;
 
+  const listHeadingRef = useRef(null);
+
   return (
     <div className="todoapp stack-large">
       <h1>TodoList</h1>
@@ -85,7 +87,9 @@ function App(props) {
 
       <div className="filters btn-group stack-exception">{filterList}</div>
 
-      <h2 id="list-heading">{headingText}</h2>
+      <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
+        {headingText}
+      </h2>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"

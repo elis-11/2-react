@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import "./App.scss";
@@ -8,12 +9,17 @@ import Todo from "./components/Todo";
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
+  function toggleTaskCompleted(id) {
+    console.log(tasks[0]);
+  }
+
   const taskList = tasks.map((task) => (
     <Todo
       id={task.id}
       name={task.name}
       completed={task.completed}
       key={task.id}
+      toggleTaskCompleted={toggleTaskCompleted}
     />
   ));
 
@@ -35,7 +41,7 @@ function App(props) {
         <FilterButton />
       </div>
 
-      <h2 id="list-heading">3 tasks remaining</h2>
+      <h2 id="list-heading">{headingText}</h2>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"

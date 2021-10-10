@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
@@ -47,7 +48,9 @@ function App(props) {
     setTasks(editedTaskList);
   }
 
-  const taskList = tasks.map((task) => (
+  const taskList = tasks
+  .filter(FILTER_MAP[filter])
+  .map((task) => (
     <Todo
       id={task.id}
       name={task.name}

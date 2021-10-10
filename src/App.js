@@ -1,16 +1,13 @@
 import React, { useState } from "react";
+import { nanoid } from "nanoid";
 import "./App.scss";
 import FilterButton from "./components/FilterButton";
 import Form from "./components/Form";
 import Todo from "./components/Todo";
 
-const [tasks, setTasks] = useState(props.tasks);
 
-/* eslint-disable jsx-a11y/no-redundant-roles */
 function App(props) {
-  function addTask(name) {
-    alert(name);
-  }
+  const [tasks, setTasks] = useState(props.tasks);
 
   const taskList = tasks.map((task) => (
     <Todo
@@ -20,6 +17,11 @@ function App(props) {
       key={task.id}
     />
   ));
+
+  function addTask(name) {
+    const newTask = { id: "todo-" +nanoid, name: name, completed: false };
+    setTasks([...tasks, newTask]);
+  }
 
   return (
     <div className="todoapp stack-large">

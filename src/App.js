@@ -3,8 +3,15 @@ import Todo from "./components/Todo";
 
 /* eslint-disable jsx-a11y/no-redundant-roles */
 function App(props) {
+
   const taskList = props.tasks.map((task) =>
-   <Todo id={task.id} name={task.name} completed={task.completed} />);
+   <Todo 
+   id={task.id} 
+   name={task.name} 
+   completed={task.completed} 
+   key={task.id} 
+   />);
+
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>

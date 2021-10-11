@@ -7,6 +7,14 @@ import FilterButton from "./components/FilterButton";
 import Form from "./components/Form";
 import Todo from "./components/Todo";
 
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
 const FILTER_MAP = {
   All: () => true,
   Active: (task) => !task.completed,
@@ -79,6 +87,8 @@ function App(props) {
   const headingText = `${taskList.length} tasks remaining`;
 
   const listHeadingRef = useRef(null);
+
+  const prevTaskLength = usePrevious(tasks.length);
 
   return (
     <div className="todoapp stack-large">

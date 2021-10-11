@@ -17,7 +17,7 @@ function App(props) {
           type="text"
           id="new-todo-input"
           className="input input__lg"
-          name="text"
+          name="completed={}tex id='todo-0't"
           autoComplete="off"
         />
         <button type="submit" className="btn btn__primary btn__lg">
@@ -49,9 +49,9 @@ function App(props) {
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading"
       >
-        <Todo name='Wake up' />
-        <Todo name='Eat' />
-        <Todo name='Sleep' />
+        <Todo name='Wake up' completed={true} id='todo-0'/>
+        <Todo name='Eat' completed={false} id='todo-1'/>
+        <Todo name='Sleep' completed={false} id='todo-1'/>
       </ul>
     </div>
   );

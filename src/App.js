@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React from 'react'
 import './App.scss'
+import Todo from './components/Todo';
 
 function App(props) {
   return (
@@ -48,6 +49,9 @@ function App(props) {
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading"
       >
+        <Todo name='Wake up' />
+        <Todo name='Eat' />
+        <Todo name='Sleep' />
       </ul>
     </div>
   );

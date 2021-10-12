@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 // import Counter from "./components/Counter";
 import "./reset.css";

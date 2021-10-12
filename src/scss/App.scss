@@ -1,3 +1,17 @@
-.App{
-  background: rgb(206, 49, 49);
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 800px;
+}
+.post {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border: 2px solid rgb(117, 116, 115);
+  background: rgb(226, 209, 209);
+  margin-top: 15px;
+align-items: center;
 }

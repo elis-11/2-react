@@ -1,10 +1,10 @@
 import React from 'react'
 import './MyInput.scss'
 
-function MyInput(props) {
+const MyInput = React.forwardRef((props, ref)=> {
     return (
-<input className='myInput' {...props} />
+<input ref={ref} className='myInput' {...props} />
         )
-}
+})
 
 export default MyInput

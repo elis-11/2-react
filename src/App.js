@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
-// import Counter from "./components/Counter";
+import MyButton from "./components/UI/button/MyButton";
+import MyInput from "./components/UI/input/MyInput";
 import "./reset.css";
 import "./scss/App.scss";
 
-function App(props) {
+function App() {
   const [posts, setPosts] = useState([
     { id: 1, title: "Javascript", body: "Description" },
     { id: 2, title: "Javascript-2", body: "Description" },
@@ -14,7 +15,12 @@ function App(props) {
 
   return (
     <div className="App">
-      <PostList posts={posts}  title='JS Posts'/>
+      <form>
+        <MyInput type="text" placeholder="Name of Post" />
+        <MyInput type="text" placeholder="Description" />
+        <MyButton>Create a Post</MyButton>
+      </form>
+      <PostList posts={posts} title='JS Posts'/>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from "react";
 
-function PostItem() {
+function PostItem(props) {
   return (
     <div className="post">
       <div className="post__content">
-        <strong>1. JavaScript</strong>
-        <div>JavaScript is important for performance!</div>
+        <strong>{props.post.id}. {props.post.title}</strong>
+        <div>{props.post.body}</div>
+        {/* <div>JavaScript is important for performance!</div> */}
       </div>
       <div className="post__btns">
         <button>Delete</button>

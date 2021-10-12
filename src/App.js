@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";

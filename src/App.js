@@ -12,45 +12,44 @@ import "./scss/App.scss";
 function App() {
   const [posts, setPosts] = useState([
     { id: 1, title: "Javascript", body: "Description" },
-    { id: 2, title: "Javascript-2", body: "Description" },
-    { id: 3, title: "Javascript-3", body: "Description" },
-  ]); 
-  const [selectedSort, setSelectedSort] = useState('')
+    { id: 2, title: "Script-2", body: "De" },
+    { id: 3, title: "JS-3", body: "Script" },
+  ]);
+  const [selectedSort, setSelectedSort] = useState("");
 
-const createPost=(newPost)=>{
-  setPosts([...posts, newPost])
-}
-//get post from children components
-const removePost=(post)=>{
-  setPosts(posts.filter(p=>p.id !== post.id))
-}
+  const createPost = (newPost) => {
+    setPosts([...posts, newPost]);
+  };
+  //get post from children components
+  const removePost = (post) => {
+    setPosts(posts.filter((p) => p.id !== post.id));
+  };
 
-const sortPosts=(sort)=>{
-  setSelectedSort(sort)
-  console.log(sort);
-}
+  const sortPosts = (sort) => {
+    setSelectedSort(sort);
+    setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
+  };
 
   return (
     <div className="App">
       <PostForm create={createPost} />
-      <hr style={{margin: '15px 0'}} />
+      <hr style={{ margin: "15px 0" }} />
       <div>
-        <MySelect 
-        value={selectedSort}
-        onChange={sortPosts}
-        defaultValue='sort by'
-        options={[
-          {value: 'title', name: 'name'},
-          {value: 'body', name: 'description'},
-        ]}
+        <MySelect
+          value={selectedSort}
+          onChange={sortPosts}
+          defaultValue="sort by"
+          options={[
+            { value: "title", name: "name" },
+            { value: "body", name: "description" },
+          ]}
         />
       </div>
-      {posts.length
-      ? <PostList remove={removePost} posts={posts} title="JS Posts" />
-      : <h1 style={{textAlign: 'center'}}>
-        Posts not found!
-        </h1>
-      }
+      {posts.length ? (
+        <PostList remove={removePost} posts={posts} title="JS Posts" />
+      ) : (
+        <h1 style={{ textAlign: "center" }}>Posts not found!</h1>
+      )}
     </div>
   );
 }

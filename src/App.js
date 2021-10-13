@@ -11,6 +11,7 @@ import MySelect from "./components/UI/select/MySelect";
 import "./scss/App.scss";
 import { usePosts } from "./hooks/usePosts";
 import axios from "axios";
+import PostService from "./API/PostServise";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -28,12 +29,9 @@ fetchPosts()
   };
 
   async function fetchPosts() {
-    const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts"
-    );
-    setPosts(response.data);
+    const posts = await PostService.getAll()
+    setPosts(posts);
   }
-
   //get post from children components
   const removePost = (post) => {
     setPosts(posts.filter((p) => p.id !== post.id));

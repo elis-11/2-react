@@ -25,6 +25,8 @@ const newPost ={
   body
 }
 setPosts([...posts, newPost])
+setTitle("")
+setBody("")
 }
 
   return (

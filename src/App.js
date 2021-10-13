@@ -24,8 +24,8 @@ const newPost ={
   title,
   body
 }
-console.log(newPost);
-  }
+setPosts([...posts, newPost])
+}
 
   return (
     <div className="App">

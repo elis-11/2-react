@@ -1,4 +1,5 @@
 import React from "react";
+import MyButton from "./UI/button/MyButton";
 
 function PostItem(props) {
   return (
@@ -9,7 +10,9 @@ function PostItem(props) {
         {/* <div>JavaScript is important for performance!</div> */}
       </div>
       <div className="post__btns">
-        <button>Delete</button>
+        <MyButton onClick={()=>props.remove(props.post)}>
+          Delete
+        </MyButton>
       </div>
     </div>
   );

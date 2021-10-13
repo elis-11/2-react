@@ -18,11 +18,15 @@ function App() {
 const createPost=(newPost)=>{
   setPosts([...posts, newPost])
 }
+//get post from children components
+const removePost=(post)=>{
+  setPosts(posts.filter(p=>p.id !== post.id))
+}
 
   return (
     <div className="App">
       <PostForm create={createPost} />
-      <PostList posts={posts} title="JS Posts" />
+      <PostList remove={removePost} posts={posts} title="JS Posts" />
     </div>
   );
 }

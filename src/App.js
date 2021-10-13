@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import PostForm from "./components/PostForm";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
@@ -18,16 +18,17 @@ function App() {
   const [selectedSort, setSelectedSort] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
-  function getSortedPosts() {
+  function getSortedPosts() {}
+
+  const sortedPosts = useMemo(() => {
+    console.log('workd function sorted posts');
     if (selectedSort) {
       return [...posts].sort((a, b) =>
         a[selectedSort].localeCompare(b[selectedSort])
       );
     }
     return posts;
-  }
-
-  const sortedPosts = getSortedPosts();
+  }, [selectedSort, posts]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);

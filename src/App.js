@@ -51,11 +51,7 @@ return sortedPosts.filter(post=>post.title.toLowerCase().includes(filter.query.t
      filter={filter}
      setFilter={setFilter}
      />
-      {sortedAndSearchedPosts.length ? (
         <PostList remove={removePost} posts={sortedAndSearchedPosts} title="JS Posts" />
-      ) : (
-        <h1 style={{ textAlign: "center" }}>Posts not found!</h1>
-      )}
     </div>
   );
 }

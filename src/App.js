@@ -26,7 +26,10 @@ const removePost=(post)=>{
   return (
     <div className="App">
       <PostForm create={createPost} />
-      <PostList remove={removePost} posts={posts} title="JS Posts" />
+      {posts.length !== 0
+      ? <PostList remove={removePost} posts={posts} title="JS Posts" />
+      : <div>Posts not found!</div>
+      }
     </div>
   );
 }

@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useMemo, useRef, useState } from "react";
+import PostFilter from "./components/PostFilter";
 import PostForm from "./components/PostForm";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
@@ -15,20 +16,24 @@ function App() {
     { id: 2, title: "Script-2", body: "De" },
     { id: 3, title: "JS-3", body: "Script" },
   ]);
-  const [selectedSort, setSelectedSort] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+
+const [filter, setFilter]=useState({sort:'', query:''});
 
   function getSortedPosts() {}
 
   const sortedPosts = useMemo(() => {
     console.log('workd function sorted posts');
-    if (selectedSort) {
+    if (filter.sort) {
       return [...posts].sort((a, b) =>
-        a[selectedSort].localeCompare(b[selectedSort])
+        a[filter.sort].localeCompare(b[filter.sort])
       );
     }
     return posts;
-  }, [selectedSort, posts]);
+  }, [filter.sort, posts]);
+
+  const sortedAndSearchedPosts= useMemo(() => {
+return sortedPosts.filter(post=>post.title.toLowerCase().includes(filter.query.toLowerCase()))
+  }, [filter.query, sortedPosts]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -38,32 +43,16 @@ function App() {
     setPosts(posts.filter((p) => p.id !== post.id));
   };
 
-  const sortPosts = (sort) => {
-    setSelectedSort(sort);
-  };
-
   return (
     <div className="App">
       <PostForm create={createPost} />
       <hr style={{ margin: "15px 0" }} />
-      <div>
-        <MyInput
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search..."
-        />
-        <MySelect
-          value={selectedSort}
-          onChange={sortPosts}
-          defaultValue="sort by"
-          options={[
-            { value: "title", name: "name" },
-            { value: "body", name: "description" },
-          ]}
-        />
-      </div>
-      {posts.length ? (
-        <PostList remove={removePost} posts={sortedPosts} title="JS Posts" />
+     <PostFilter
+     filter={filter}
+     setFilter={setFilter}
+     />
+      {sortedAndSearchedPosts.length ? (
+        <PostList remove={removePost} posts={sortedAndSearchedPosts} title="JS Posts" />
       ) : (
         <h1 style={{ textAlign: "center" }}>Posts not found!</h1>
       )}

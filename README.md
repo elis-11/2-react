@@ -1,4 +1,5 @@
 ## Web deploy:
+https://elis-react-apis.netlify.app/
 
 # Link to components
 https://jsonplaceholder.typicode.com/posts
@@ -12,7 +13,8 @@ https://jsonplaceholder.typicode.com/posts
 
 - react-router-dom
 - gh-pages
-
+- npm i react-transition-group --save 
+- npm i axios
 
 ### Structure
 

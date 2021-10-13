@@ -18,10 +18,11 @@ function App() {
   const [filter, setFilter] = useState({ sort: "", query: "" });
   const [modal, setModal] = useState(false);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
-  
+  const [isPostLoading, setIsPostLoading] = useState(false);
+
   useEffect(() => {
-fetchPosts()    
-  }, [])
+    fetchPosts();
+  }, []);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -29,8 +30,12 @@ fetchPosts()
   };
 
   async function fetchPosts() {
-    const posts = await PostService.getAll()
-    setPosts(posts);
+    setIsPostLoading(true);
+    setTimeout(async () => {
+      const posts = await PostService.getAll();
+      setPosts(posts);
+      setIsPostLoading(false);
+    }, 5000);
   }
   //get post from children components
   const removePost = (post) => {
@@ -48,11 +53,15 @@ fetchPosts()
       </MyModal>
       <hr style={{ margin: "15px 0" }} />
       <PostFilter filter={filter} setFilter={setFilter} />
-      <PostList
-        remove={removePost}
-        posts={sortedAndSearchedPosts}
-        title="JS Posts"
-      />
+      {isPostLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <PostList
+          remove={removePost}
+          posts={sortedAndSearchedPosts}
+          title="JS Posts"
+        />
+      )}
     </div>
   );
 }

@@ -15,6 +15,7 @@ function App() {
     { id: 2, title: "Javascript-2", body: "Description" },
     { id: 3, title: "Javascript-3", body: "Description" },
   ]); 
+  const [selectedSort, setSelectedSort] = useState('')
 
 const createPost=(newPost)=>{
   setPosts([...posts, newPost])
@@ -24,12 +25,19 @@ const removePost=(post)=>{
   setPosts(posts.filter(p=>p.id !== post.id))
 }
 
+const sortPosts=(sort)=>{
+  setSelectedSort(sort)
+  console.log(sort);
+}
+
   return (
     <div className="App">
       <PostForm create={createPost} />
       <hr style={{margin: '15px 0'}} />
       <div>
         <MySelect 
+        value={selectedSort}
+        onChange={sortPosts}
         defaultValue='sort by'
         options={[
           {value: 'title', name: 'name'},
@@ -37,7 +45,6 @@ const removePost=(post)=>{
         ]}
         />
       </div>
-
       {posts.length
       ? <PostList remove={removePost} posts={posts} title="JS Posts" />
       : <h1 style={{textAlign: 'center'}}>

@@ -5,7 +5,7 @@ import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
 import MyButton from "./components/UI/button/MyButton";
 import MyInput from "./components/UI/input/MyInput";
-import "./reset.css";
+// import "./reset.css";
 import "./scss/App.scss";
 
 function App() {
@@ -26,9 +26,11 @@ const removePost=(post)=>{
   return (
     <div className="App">
       <PostForm create={createPost} />
-      {posts.length !== 0
+      {posts.length
       ? <PostList remove={removePost} posts={posts} title="JS Posts" />
-      : <div>Posts not found!</div>
+      : <h1 style={{textAlign: 'center'}}>
+        Posts not found!
+        </h1>
       }
     </div>
   );

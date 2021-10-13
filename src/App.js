@@ -48,7 +48,7 @@ return sortedPosts.filter(post=>post.title.toLowerCase().includes(filter.query.t
 
   return (
     <div className="App">
-      <MyButton onClick={()=>setModal(true)}>
+      <MyButton style={{ marginTop: '30px' }} onClick={()=>setModal(true)}>
         create an user
         </MyButton>
       <MyModal visible={modal} setVisible={setModal}>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Counter from "./components/Counter";
 import PostList from './components/PostList';
+import MyButton from './components/UI/button/MyButton';
 import "./scss/App.scss";
 
 const App = () => {
@@ -11,6 +12,10 @@ const App = () => {
 
   return (
     <div className="App">
+      <form>
+       
+        <MyButton>Create a post</MyButton>
+      </form>
     <PostList posts={posts} title={'JAVASCRIPT POSTS'} />
       <Counter />
     </div>

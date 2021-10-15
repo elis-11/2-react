@@ -6,18 +6,4 @@
 
   display: collumn;
   justify-content: space-around;
-
-  .logo {
-    width: 6rem;
-    height: auto;
-    border: 1px solid red;
-  }
-
-  .item {
-    color: rgb(146, 137, 137);
-    text-decoration: none;
-  }
-  .item .activeLink {
-    color: gold;
-  }
 }

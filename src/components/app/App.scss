@@ -11,18 +11,8 @@
 		height: 100vh;
 	  
 		grid-template-areas:
-		  'h h'
 		  'n c';
-		grid-template-rows: 10% 1fr;
 		grid-template-columns: 1fr 11fr;
 		/* grid-gap: 10px; */
-	  .content {
-		grid-area: c;
-		/* background-color: rgb(152, 183, 241); */
-		/* background-color:rgb(224, 212, 212) ; */
-		/* background-color: rgb(221, 220, 220) ; */
-		background-color: #e0e0dc;
-		/* background-color: #eee4e1; */
-	  }
-	  
+	
 }

@@ -1,14 +1,23 @@
-
 .nav {
-    grid-area: n;
-    background-color: rgb(235, 232, 232);
-    padding: 20px;
-  
-    .item {
-      color: rgb(146, 137, 137);
-      text-decoration: none;
-    }
-    .item .activeLink {
-      color: gold;
+  grid-area: n;
+  background-color: rgb(235, 232, 232);
+  padding: 20px;
+  height: 100vh;
+
+  display: collumn;
+  justify-content: space-around;
+
+  .logo {
+    width: 6rem;
+    height: auto;
+    border: 1px solid red;
   }
+
+  .item {
+    color: rgb(146, 137, 137);
+    text-decoration: none;
   }
+  .item .activeLink {
+    color: gold;
+  }
+}

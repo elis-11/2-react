@@ -1,4 +1,22 @@
 .App {
-	display: flex;
-	flex-direction: column;
+		display: grid;
+		margin: 0 auto;
+		width: 100%;
+		height: 100vh;
+	  
+		grid-template-areas:
+		  'h h'
+		  'n c';
+		grid-template-rows: 10% 1fr;
+		grid-template-columns: 2fr 10fr;
+		/* grid-gap: 10px; */
+	  .content {
+		grid-area: c;
+		/* background-color: rgb(152, 183, 241); */
+		/* background-color:rgb(224, 212, 212) ; */
+		/* background-color: rgb(221, 220, 220) ; */
+		background-color: #e0e0dc;
+		/* background-color: #eee4e1; */
+	  }
+	  
 }

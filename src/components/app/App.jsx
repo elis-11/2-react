@@ -4,6 +4,7 @@ import "./App.scss";
 import "../../reset.css";
 import Navbar from "../navbar/Navbar";
 import Home from "../home/Home";
+import About from "../about/About";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Switch>
           <Home />
+          <About />
         </Switch>
       </div>
     </Router>

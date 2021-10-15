@@ -1,8 +1,8 @@
 .social-icons {
-  position: absolute;
+  grid-area: i;
 
   ul {
-    height: 90vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,33 +13,11 @@
       text-shadow: 1px 1px 2px var(--main-dark);
       font-size: 30px;
       padding: 10px;
-      margin: 0 10px;
-
+      // margin: 0 10px;
     }
-     li i:hover {
-        color: red;
+    li i:hover {
+      color: red;
     }
   }
 }
-
-@media only screen and (max-width: 680px) {
-  .social-icons {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 680px) {
-  .social-icons ul {
-    height: 30vh;
-    flex-direction: row;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .social-icons ul li i {
-    font-size: 25px;
-    padding: 5px;
-    margin: 0 5px;
-  }
-}
-
 

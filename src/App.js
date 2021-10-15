@@ -15,6 +15,7 @@ const App = () => {
       <form>
         <input type="text" placeholder="Name" />
         <input type="text" placeholder="Desription" />
+        
         <MyButton>Create a post</MyButton>
       </form>
     <PostList posts={posts} title={'JAVASCRIPT POSTS'} />

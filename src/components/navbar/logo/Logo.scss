@@ -1,5 +1,8 @@
 .logo {
-    width: 6rem;
-    height: auto;
-    border: 1px solid red;
-  }
+  grid-area: l;
+  background-color: rgb(224, 212, 212);
+
+  width: 6rem;
+  height: auto;
+  border: 1px solid red;
+}

@@ -4,6 +4,7 @@ import "./MyButton.scss";
 const MyButton = ({children, ...props}) => {
   return (
 <div className="MyButton">
+  
     <button className="btn">
     {children}
   </button>

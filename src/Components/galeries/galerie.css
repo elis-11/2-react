@@ -1,0 +1,34 @@
+/* GALERIE SECTION */
+.galerie--section {
+	color: black;
+}
+
+/* GALERIE NAV LINK COLOR  */
+.galerie--link {
+	color: blueviolet;
+}
+
+/* GALERIE TITLE */
+.galerie--section h3 {
+	font-weight: bold;
+	margin: 20px;
+	padding: 5px;
+}
+
+/* GALERIE IMAGES */
+.galerie--section img {
+	max-width: 100%;
+}
+
+/* GALERIE COLRS */
+.section--1 {
+	background-color: rgb(168, 241, 241);
+}
+
+.section--2 {
+	background-color: rgb(168, 241, 168);
+}
+
+.section--3 {
+	background-color: rgb(229, 168, 241);
+}

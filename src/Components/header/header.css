@@ -1,0 +1,41 @@
+/* HEADER */
+.header {
+	display: flex;
+	justify-content: center;
+	background-color: lightgrey;
+}
+
+/* NAV */
+.nav--ul {
+	display: flex;
+}
+
+.nav--ul li {
+	margin: 0 20px;
+	padding: 5px;
+}
+
+/* NAV LINK */
+.nav--link {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/* NAV LINK COLOR */
+.nav--link--1 {
+	color: hotpink;
+}
+
+.nav--link--2 {
+	color: blueviolet;
+}
+
+.nav--link--3 {
+	color: cornflowerblue;
+}
+
+/* NAV LINK HOVER */
+.nav--link:hover {
+	color: blue;
+}

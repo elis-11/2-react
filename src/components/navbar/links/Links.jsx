@@ -4,7 +4,7 @@ import './Links.scss';
 
 const Links = () => {
   return (
-    <div className="link">
+    <div className="links">
       <div>
         <NavLink className="item" to="/home">Profile</NavLink>
       </div>

@@ -4,18 +4,14 @@
   width: 6rem;
   height: auto;
 
-
   i {
-    color: rgb(107, 100, 100);
-    text-shadow: 1px 1px 2px var(--main-dark);
+    color: whitesmoke;
+    text-shadow: 2px 2px grey;
     font-size: 90px;
-    padding: 10px;
-  transition: all 0.5s ease;
+    transition: all 0.5s ease;
 
-    // margin: 0 10px;
   }
   i:hover {
-    color: white;
+    color: #000;
   }
-
 }

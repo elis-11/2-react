@@ -1,36 +1,33 @@
 .link {
   grid-area: link;
   display: grid;
-flex-direction: column;  
-justify-content: space-between;
-text-decoration: none;
-
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
 
   .item {
     color: whitesmoke;
     text-decoration: none;
     text-shadow: 1px 1px grey;
-
+    margin-top: 30px;
     padding: 10px;
     font-size: 20px;
   }
-  :hover{
+  :hover {
     color: #000;
   }
   .item .activeLink {
     color: gold;
   }
-  }
+}
 
-  // i {
-  //   color: rgb(107, 100, 100);
-  //   text-shadow: 1px 1px 2px var(--main-dark);
-  //   font-size: 90px;
-  //   padding: 10px;
-  //   // margin: 0 10px;
-  // }
-  // i:hover {
-  //   color: red;
-  // }
-
-
+// i {
+//   color: rgb(107, 100, 100);
+//   text-shadow: 1px 1px 2px var(--main-dark);
+//   font-size: 90px;
+//   padding: 10px;
+//   // margin: 0 10px;
+// }
+// i:hover {
+//   color: red;
+// }

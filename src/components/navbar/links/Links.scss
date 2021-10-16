@@ -2,7 +2,8 @@
   grid-area: link;
   display: grid;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
 
   .item {

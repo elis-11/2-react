@@ -1,10 +1,12 @@
 .nav-logo {
   grid-area: l;
 
-  width: 6rem;
-  height: auto;
-
+display: flex;
+justify-content: center;  
+align-items: center;
+  
   i {
+    width: 6rem;
     color: whitesmoke;
     text-shadow: 2px 2px grey;
     font-size: 90px;

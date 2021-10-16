@@ -1,9 +1,9 @@
-import React from 'react'
-import './Icons.scss';
+import React from "react";
+import "./Icons.scss";
 
 const Icons = () => {
-    return (
-        <div className="social-icons">
+  return (
+    <div className="social-icons">
       <ul>
         <li>
           <a
@@ -42,8 +42,8 @@ const Icons = () => {
           </a>
         </li>
       </ul>
-      </div>
-    )
-}
+    </div>
+  );
+};
 
-export default Icons
+export default Icons;

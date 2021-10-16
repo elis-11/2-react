@@ -6,10 +6,10 @@ const Links = () => {
   return (
     <div className="link">
       <div>
-        <NavLink className="item" to="/profile">Profile</NavLink>
+        <NavLink className="item" to="/home">Profile</NavLink>
       </div>
       <div>
-        <NavLink className="item"  to="/dialogs">Message</NavLink>
+        <NavLink className="item" to="/projects">Projects</NavLink>
       </div>
       <div>
         <NavLink className="item" to="/news">News</NavLink>

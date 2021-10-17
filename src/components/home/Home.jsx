@@ -5,8 +5,8 @@ import "./Home.scss";
 const Home = () => {
   return (
     <div className="Home content">
-      <h2>Home</h2>
-      <p>Page 1</p>
+      <h2>Profile</h2>
+      <p>Head Page</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illo
         possimus assumenda suscipit ducimus eius! Est ab consequuntur aspernatur

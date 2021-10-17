@@ -5,7 +5,7 @@ const About = () => {
     return (
 <div className="About content">
 <h2>About</h2>
-			<p>Page 2</p>
+			<p>Page </p>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illo
 				possimus assumenda suscipit ducimus eius! Est ab consequuntur aspernatur

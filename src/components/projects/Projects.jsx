@@ -1,4 +1,5 @@
 import React from "react";
+import Count from "./Count";
 import "./Projects.scss";
 
 const Projects = () => {
@@ -13,6 +14,7 @@ const Projects = () => {
         officiis, quasi excepturi placeat natus commodi, doloremque distinctio
         distinctio!
       </p>
+      <Count />
     </div>
   );
 };

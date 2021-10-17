@@ -6,6 +6,7 @@ import MyButton from "../UI/button/MyButton";
 import MyInput from "../UI/input/MyInput";
 
 const Projects = () => {
+  // eslint-disable-next-line no-unused-vars
   const [posts, setPosts] = useState([
     { id: "1", title: "JS", body: "Description" },
     { id: "2", title: "JS", body: "Description" },

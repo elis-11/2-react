@@ -15,6 +15,7 @@ https://jsonplaceholder.typicode.com/posts
 - gh-pages
 - npm i react-transition-group --save 
 - npm i axios
+- npm i sass
 
 ### Structure
 
@@ -27,9 +28,10 @@ portfolio
  │     │─── assets
  │     │     
  │     │─── components
- │     │     │─── header
- │     │     │─── main
- │     │     └─── footer
+ │     │     │─── about
+ │     │     │─── app
+ │     │     |─── home
+ |     |     |––– navbar
  │     │     
  │     │─── app.js
  │     │─── app.css

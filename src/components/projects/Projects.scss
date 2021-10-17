@@ -7,16 +7,20 @@
 .Projects {
   grid-area: c;
   background-color: rgb(212, 211, 211);
-  border: 1px solid red;
+  // border: 1px solid red;
   align-items: center;
 
   .post {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
-    margin: 1rem 8rem;
+
+    background-color: rgb(212, 205, 205);
+    border: 1px solid rgb(170, 163, 163);
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 1px #8a8585;
+
+    margin: 1rem 5rem;
     padding: 15px;
-    // width: 70%;
   }
 }

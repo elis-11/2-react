@@ -8,8 +8,11 @@ const Projects = () => {
       {/* <Count /> */}
       <div className="post">
         <div className="post-content">
-          <strong>My Project</strong>
+          <strong>1. Project</strong>
           <div>API</div>
+        </div>
+        <div className="btn">
+          <button>Delete</button>
         </div>
       </div>
     </div>

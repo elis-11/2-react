@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import "./Projects.scss";
 // import PostItem from "./PostItem";
 import PostList from "./PostList";
+import MyButton from "../UI/button/MyButton";
+import MyInput from "../UI/input/MyInput";
 
 const Projects = () => {
   const [posts, setPosts] = useState([
     { id: "1", title: "JS", body: "Description" },
     { id: "2", title: "JS", body: "Description" },
   ]);
-  const [posts2, setPosts2] = useState([
-    { id: "1", title: "Python", body: "Description" },
-    { id: "2", title: "Python", body: "Description" },
-  ]);
 
   return (
     <div className="Projects">
+      <form>
+        <MyInput type="text" placeholder="Name" />
+        <MyInput type="text" placeholder="Description" />
+        <MyButton>create a post</MyButton>
+      </form>
       <PostList posts={posts} title="All Posts 1" />
-      <PostList posts={posts2} title="All Posts 2" />
     </div>
   );
 };

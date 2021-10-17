@@ -5,15 +5,11 @@ import "./Projects.scss";
 const Projects = () => {
   return (
     <div className="Projects">
-        {/* <Count /> */}
+      {/* <Count /> */}
       <div className="post">
         <div className="post-content">
           <strong>My Project</strong>
           <div>API</div>
-        </div>
-
-        <div className="btn">
-          <button>Delete</button>
         </div>
       </div>
     </div>

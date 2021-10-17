@@ -1,18 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .Projects {
   grid-area: c;
   background-color: rgb(212, 211, 211);
+  border: 1px solid red;
+  align-items: center;
 
-  display: flex;
-  justify-content: center;
-
-  .post{
+  .post {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid red;
-    margin-top: 15px;
+    margin: 1rem 8rem;
     padding: 15px;
-    width: 70%;
-    height: 10%;
+    // width: 70%;
   }
 }

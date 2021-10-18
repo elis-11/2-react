@@ -9,9 +9,6 @@
   background-color: rgb(212, 211, 211);
   // border: 1px solid red;
   align-items: center;
-  :hover {
-    color: var(--beige);
-  }
 
   .post {
     display: flex;
@@ -26,5 +23,9 @@
     // margin: 1rem 5em;
     margin: 0.5% 10%;
     padding: 15px;
+    :hover {
+      color: var(--beige);
+    }
+  
   }
 }

@@ -12,12 +12,35 @@ const Projects = () => {
     { id: "2", title: "JS", body: "Description" },
   ]);
 
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+
+  const addNewPost = (e) => {
+    e.preventDefault();
+    const newPost={
+      id: Date.now(),
+      title,
+      body
+    }
+    setPosts([...posts, newPost]);
+  };
+
   return (
     <div className="Projects">
       <form>
-        <MyInput type="text" placeholder="Name" />
-        <MyInput type="text" placeholder="Description" />
-        <MyButton>create a post</MyButton>
+        <MyInput
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+          placeholder="Name"
+        />
+        <MyInput
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+          type="text"
+          placeholder="Description"
+        />
+        <MyButton onClick={addNewPost}>create a post</MyButton>
       </form>
       <PostList posts={posts} title="All Posts 1" />
     </div>

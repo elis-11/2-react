@@ -3,9 +3,8 @@ import "./MyInput.scss"
 
 const MyInput = (props) => {
     return (
-        <input className='MyInput' {...props}>
+        <input className='MyInput' {...props} />
             
-        </input>
     )
 }
 

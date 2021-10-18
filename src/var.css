@@ -10,4 +10,5 @@
     --fuchsia: #ff00ff;
     --grey: #808080;
     --black: black;
+  /* color: var(--main-grey); */
 }

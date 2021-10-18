@@ -42,7 +42,7 @@ const Projects = () => {
         />
         <MyButton onClick={addNewPost}>create a post</MyButton>
       </form>
-      <PostList posts={posts} title="All Posts 1" />
+      <PostList posts={posts} title="All Posts" />
     </div>
   );
 };

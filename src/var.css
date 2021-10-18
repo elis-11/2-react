@@ -4,11 +4,13 @@
     --dbeige: #fff4e1;
     --linen: #faf0e6;
     --tistle: #d8bfd8;
+    /* --orchid: #dda0dd; */
     --orchid: #dda0dd;
+    --fuchsia: #ff00ff;
     --violet: #8a2be2;
     --purple: #9370db;
-    --fuchsia: #ff00ff;
+    --mblue: #7b68ee;
     --grey: #808080;
     --black: black;
-  /* color: var(--main-grey); */
+  /* color: var(--grey); */
 }

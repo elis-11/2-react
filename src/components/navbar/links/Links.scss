@@ -18,8 +18,7 @@
     font-size: 20px;
   }
   :hover {
-    // color: #000;
-    color: #808080;
+    color: var(--orchid);
   }
   .item .activeLink {
     color: gold;

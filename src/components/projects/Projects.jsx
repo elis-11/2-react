@@ -23,6 +23,8 @@ const Projects = () => {
       body
     }
     setPosts([...posts, newPost]);
+    setTitle('')
+    setBody('')
   };
 
   return (

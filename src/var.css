@@ -11,8 +11,10 @@
     --fuchsia: #ff00ff;
     --violet: #8a2be2;
     --purple: #9370db;
-    --green: #00fa9a;
+    /* --green: #00fa9a; */
+    --green: #4bd8a2;
     --mblue: #7b68ee;
+    --lgrey: #d6d6cd;
     --grey: #808080;
     --black: black;
   /* color: var(--grey); */

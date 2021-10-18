@@ -9,6 +9,9 @@
   background-color: rgb(212, 211, 211);
   // border: 1px solid red;
   align-items: center;
+  :hover {
+    color: var(--beige);
+  }
 
   .post {
     display: flex;

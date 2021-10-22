@@ -1,9 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "./Projects.scss";
-// import PostItem from "./PostItem";
 import PostList from "./PostList";
-// import MyButton from "../UI/button/MyButton";
-// import MyInput from "../UI/input/MyInput";
 import PostForm from "./PostForm";
 
 function Projects() {
@@ -14,13 +12,17 @@ function Projects() {
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
-  }
+  };
+
+  const removePost = (post) => {
+    setPosts(posts.filter((p) => p.id !== post.id));
+  };
 
   return (
     <div className="Projects">
-      <PostForm create={createPost}/>
-      <PostList posts={posts} title="All Posts" />
+      <PostForm create={createPost} />
+      <PostList remove={removePost} posts={posts} title="All Posts" />
     </div>
   );
-};
+}
 export default Projects;

@@ -8,6 +8,7 @@ import About from "../about/About";
 import Projects from "../projects/Projects";
 import Users from "../users/Users";
 import Work from "../work/Work";
+import News from "../news/News";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route path="/projects">
             <Projects />
+          </Route>
+          <Route path="/news">
+            <News />
           </Route>
           <Route path="/about">
             <About />

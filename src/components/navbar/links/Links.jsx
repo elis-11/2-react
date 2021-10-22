@@ -12,10 +12,16 @@ const Links = () => {
         <NavLink className="item" to="/projects">Projects</NavLink>
       </div>
       <div>
-        <NavLink className="item" to="/news">News</NavLink>
+        <NavLink className="item" to="/about">About</NavLink>
       </div>
       <div>
-        <NavLink className="item" to="/about">About</NavLink>
+        <NavLink className="item" to="/users">Users</NavLink>
+      </div>
+      <div>
+        <NavLink className="item" to="/work">Work</NavLink>
+      </div>
+      <div>
+        <NavLink className="item" to="/news">News</NavLink>
       </div>
       <div>
         <NavLink className="item" to="/settings">Settings</NavLink>

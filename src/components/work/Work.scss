@@ -1,3 +1,31 @@
-.Work{
-    background-color: rgb(228, 224, 224);
-}
+	.Work {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+		font-size: 1.6rem;
+		nav {
+			background-color: #eee;
+			padding: 10px;
+			.selected {
+				font-weight: bold;
+			}
+			ul {
+				display: flex;
+				li {
+					margin: 0 0 0 30px;
+					a {
+						text-decoration: none;
+						color: black;
+					}
+				}
+			}
+		}
+		.page {
+			padding: 10px;
+			.row{
+				margin-bottom: 10px;
+				button{
+					margin-left: 10px;
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}

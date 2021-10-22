@@ -24,6 +24,9 @@ const Links = () => {
         <NavLink className="item" to="/news">News</NavLink>
       </div>
       <div>
+        <NavLink className="item" to="/calendar">Calendar</NavLink>
+      </div>
+      <div>
         <NavLink className="item" to="/settings">Settings</NavLink>
       </div>
     </div>

@@ -6,6 +6,8 @@ import Navbar from "../navbar/Navbar";
 import Home from "../home/Home";
 import About from "../about/About";
 import Projects from "../projects/Projects";
+import Users from "../users/Users";
+import Work from "../work/Work";
 
 function App() {
   return (
@@ -14,14 +16,20 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/projects">
-              <Projects />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Projects />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/work">
+            <Work />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
         </Switch>
       </div>
     </Router>

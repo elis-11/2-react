@@ -29,13 +29,17 @@ const News = () => {
   };
 
   const jsxSuppliers = suppliers.map((supplier) => (
-    <div key={supplier._id}>
+    <div key={ supplier._id }>
       <form>
-        <div>
+        <div className='card'>
+          <div>
           <label>Company: </label>
-          <input type="text" name="company" value={supplier.company} />
+          <input type="text" value={supplier.company} />
+          </div>
+          <div>
           <label>Contact: </label>
-          <input type="text" name="contact" value={supplier.contact} />
+          <input type="text" value={supplier.contact} />
+          </div>
         </div>
       </form>
     </div>
@@ -44,9 +48,9 @@ const News = () => {
     <div className="News content">
       <header className="header">
         <h2>News</h2>
+        <h2>UseState with Objects</h2>
         <h2>Suppliers</h2>
         {jsxSuppliers}
-        <h2>UseState with Objects</h2>
         {/* {jsxSuppliers} */}
         <div>
           {/* ADD new supplier form */}

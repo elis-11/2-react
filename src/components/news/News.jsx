@@ -13,7 +13,7 @@ const News = () => {
 
   // default dummy suppliers
   const [suppliers, setSuppliers] = useState([
-    { _id: "s1", company: "Supply Unlimited GmbH", contact: "Humberto", phone: "+4912345" },
+    { _id: "s1", company: "Supply Unlimited GmbH", contact: "Albert", phone: "+4912345" },
     { _id: "s2", company: "Supply you as we can ltd", contact: "Rob", phone: "+496789"  }
   ])
 
@@ -39,6 +39,9 @@ const News = () => {
           <div>
           <label>Contact: </label>
           <input type="text" value={supplier.contact} />
+          </div>
+          <div className='actions'>
+            <button>X</button>
           </div>
         </div>
       </form>

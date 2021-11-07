@@ -7,13 +7,15 @@ const News = () => {
     company: "",
     contact: "",
     phone: ""
-  };
-  const [supplierNew, setSupplierNew] = useState( supplierDefault );
+  }
 
+  const [supplierNew, setSupplierNew] = useState( supplierDefault )
+
+  // default dummy suppliers
   const [suppliers, setSuppliers] = useState([
-    { _id: "s1", company: "SU GmbH", contact: "Albert", phone: "+496328642" },
-    { _id: "s2", company: "SE GmbH", contact: "Bob", phone: "+496328642" },
-  ]);
+    { _id: "s1", company: "Supply Unlimited GmbH", contact: "Humberto", phone: "+4912345" },
+    { _id: "s2", company: "Supply you as we can ltd", contact: "Rob", phone: "+496789"  }
+  ])
 
   // add new supliers
   const addSupplier = (e) => {
@@ -42,37 +44,32 @@ const News = () => {
     <div className="News content">
       <header className="header">
         <h2>News</h2>
-        <h2>UseState with Objects</h2>
+        <h2>Suppliers</h2>
         {jsxSuppliers}
-        <div style={{ padding: "10px" }}>
-          {/*ADD NEW SUPPLIER FORM */}
-          <form onSubmit={addSupplier}>
+        <h2>UseState with Objects</h2>
+        {/* {jsxSuppliers} */}
+        <div>
+          {/* ADD new supplier form */}
+          <form className="frmAdd" onSubmit={ addSupplier } >
             <label>New Supplier: </label>
-            <input
-              type="text"
-              placeholder="Company... "
-              onChange={(e) =>
-                setSupplierNew({ ...setSupplierNew, company: e.target.value })
-              }
-              value={supplierNew.company}
-            />
-            <input
-              type="text"
-              placeholder="Contact... "
-              onChange={(e) =>
-                setSupplierNew({ ...setSupplierNew, contact: e.target.value })
-              }
-              value={supplierNew.contact}
-            />
-            <input
-              type="text"
-              placeholder="Phone... "
-              onChange={(e) =>
-                setSupplierNew({ ...setSupplierNew, phone: e.target.value })
-              }
-              value={supplierNew.phone}
-            />
-            <button type="submit">Add</button>
+            <div>
+              <input type="text" placeholder="Company..." 
+                onChange={ (e) => setSupplierNew({ ...supplierNew, company: e.target.value }) } 
+                value={ supplierNew.company } />
+            </div>
+            <div>
+              <input type="text" placeholder="Contact..."  
+                onChange={ (e) => setSupplierNew({ ...supplierNew, contact: e.target.value }) } 
+                value={ supplierNew.contact} />
+            </div>
+            <div>
+              <input type="text" placeholder="Phone..." 
+                onChange={ (e) => setSupplierNew({ ...supplierNew, phone: e.target.value }) } 
+                value={ supplierNew.phone} />
+            </div>
+            <div>
+              <button type="submit">Add</button>
+            </div>
           </form>
         </div>
       </header>

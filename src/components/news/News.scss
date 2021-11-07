@@ -1,7 +1,38 @@
-.News{
-    text-align: center;
-    background-color: #282c34;
-    color: white;
-    min-height: 100%;
-    font-size: calc(10px + 2vmin)
+.News {
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  min-height: 100%;
+  font-size: calc(10px + 2vmin) header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  input {
+    padding: 5px;
+    width: max-content;
+  }
+  form {
+      width: 80vw;
+      display: flex;
+      justify-content: center;
+  }
+  .supplier-card {
+      width: 200px;
+      margin: 5px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+  }
+  .frmAdd{
+      display: block;
+  }
+  .actions{
+      display: flex;
+      justify-content: center;
+  }
+  .actions button {
+      margin: 10px 20px;
+  }
 }

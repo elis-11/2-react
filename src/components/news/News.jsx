@@ -40,7 +40,7 @@ const News = () => {
   ));
   return (
     <div className="News content">
-      <header className="News-header">
+      <header className="header">
         <h2>News</h2>
         <h2>UseState with Objects</h2>
         {jsxSuppliers}

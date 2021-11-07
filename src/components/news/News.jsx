@@ -9,6 +9,8 @@ const [supplierNew, setSupplierNew] = useState({
   phone: ''
 })
 
+
+
 const [suppliers, setSuppliers] = useState([
   {_id: 's1', company:'SU GmbH', contact: 'Albert', phone: '+496328642'},
   {_id: 's2', company:'SE GmbH', contact: 'Bob', phone: '+496328642'},
@@ -18,6 +20,10 @@ const [suppliers, setSuppliers] = useState([
 const addSupplier = (e)=> {
 e.preventDefault()  // prevent that page is reloaded
 console.log('New Supplier to add:', supplierNew);
+
+// create copy of OLD entries and merge with NEW entry
+const suppliersNew = [...suppliers, supplierNew]
+setSuppliers(suppliersNew)
 }
 
 const jsxSuppliers =suppliers.map((supplier) =>(

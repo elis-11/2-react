@@ -76,6 +76,7 @@ const News = () => {
             </div>
             <div>
               <button type="submit">Add</button>
+              
             </div>
           </form>
         </div>

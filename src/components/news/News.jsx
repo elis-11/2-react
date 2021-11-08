@@ -2,20 +2,29 @@ import { useState } from "react";
 import "./News.scss";
 
 const News = () => {
-
   const supplierDefault = {
     company: "",
     contact: "",
-    phone: ""
-  }
+    phone: "",
+  };
 
-  const [supplierNew, setSupplierNew] = useState( supplierDefault )
+  const [supplierNew, setSupplierNew] = useState(supplierDefault);
 
   // default dummy suppliers
   const [suppliers, setSuppliers] = useState([
-    { _id: "s1", company: "Supply Unlimited GmbH", contact: "Albert", phone: "+4912345" },
-    { _id: "s2", company: "Supply you as we can ltd", contact: "Rob", phone: "+496789"  }
-  ])
+    {
+      _id: "s1",
+      company: "Supply Unlimited GmbH",
+      contact: "Albert",
+      phone: "+4912345",
+    },
+    {
+      _id: "s2",
+      company: "Supply you as we can ltd",
+      contact: "Rob",
+      phone: "+496789",
+    },
+  ]);
 
   // add new supliers
   const addSupplier = (e) => {
@@ -25,23 +34,30 @@ const News = () => {
     // create copy of OLD entries and merge with NEW entry
     const suppliersNew = [...suppliers, supplierNew];
     setSuppliers(suppliersNew);
-    setSupplierNew({...supplierDefault});
+    setSupplierNew({ ...supplierDefault });
+  };
+
+  //delete existing supplier
+  const deleteSupplier = (idSupplier) => {
+    console.log("We wanna delete ID:", idSupplier);
   };
 
   const jsxSuppliers = suppliers.map((supplier) => (
-    <div key={ supplier._id }>
+    <div key={supplier._id}>
       <form>
-        <div className='card'>
+        <div className="card">
           <div>
-          <label>Company: </label>
-          <input type="text" value={supplier.company} />
+            <label>Company: </label>
+            <input type="text" value={supplier.company} />
           </div>
           <div>
-          <label>Contact: </label>
-          <input type="text" value={supplier.contact} />
+            <label>Contact: </label>
+            <input type="text" value={supplier.contact} />
           </div>
-          <div className='actions'>
-            <button>X</button>
+          <div className="actions">
+            <button type="button" onClick={() => deleteSupplier(supplier._id)}>
+              X
+            </button>
           </div>
         </div>
       </form>
@@ -57,26 +73,40 @@ const News = () => {
         {/* {jsxSuppliers} */}
         <div>
           {/* ADD new supplier form */}
-          <form className="frmAdd" onSubmit={ addSupplier } >
+          <form className="frmAdd" onSubmit={addSupplier}>
             <label>New Supplier: </label>
             <div>
-              <input type="text" placeholder="Company..." 
-                onChange={ (e) => setSupplierNew({ ...supplierNew, company: e.target.value }) } 
-                value={ supplierNew.company } />
+              <input
+                type="text"
+                placeholder="Company..."
+                onChange={(e) =>
+                  setSupplierNew({ ...supplierNew, company: e.target.value })
+                }
+                value={supplierNew.company}
+              />
             </div>
             <div>
-              <input type="text" placeholder="Contact..."  
-                onChange={ (e) => setSupplierNew({ ...supplierNew, contact: e.target.value }) } 
-                value={ supplierNew.contact} />
+              <input
+                type="text"
+                placeholder="Contact..."
+                onChange={(e) =>
+                  setSupplierNew({ ...supplierNew, contact: e.target.value })
+                }
+                value={supplierNew.contact}
+              />
             </div>
             <div>
-              <input type="text" placeholder="Phone..." 
-                onChange={ (e) => setSupplierNew({ ...supplierNew, phone: e.target.value }) } 
-                value={ supplierNew.phone} />
+              <input
+                type="text"
+                placeholder="Phone..."
+                onChange={(e) =>
+                  setSupplierNew({ ...supplierNew, phone: e.target.value })
+                }
+                value={supplierNew.phone}
+              />
             </div>
             <div>
               <button type="submit">Add</button>
-              
             </div>
           </form>
         </div>

@@ -9,6 +9,8 @@ import Projects from "../projects/Projects";
 import Users from "../users/Users";
 import Work from "../work/Work";
 import News from "../news/News";
+import Settings from "../settings/Settings";
+import Calendar from "../calendar/Calendar";
 
 function App() {
   return (
@@ -19,9 +21,6 @@ function App() {
           <Route path="/projects">
             <Projects />
           </Route>
-          <Route path="/news">
-            <News />
-          </Route>
           <Route path="/about">
             <About />
           </Route>
@@ -30,6 +29,15 @@ function App() {
           </Route>
           <Route path="/work">
             <Work />
+          </Route>
+          <Route path="/news">
+            <News />
+          </Route>
+          <Route path="/calendar">
+            <Calendar />
+          </Route>
+          <Route path="/settings">
+            <Settings />
           </Route>
           <Route path="/">
             <Home />

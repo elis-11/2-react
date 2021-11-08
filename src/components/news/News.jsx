@@ -42,10 +42,12 @@ const News = () => {
     console.log("We wanna delete ID:", idSupplierToDelete);
 
     // delete item by filtering it out!
-    const suppliersNew = suppliers.filter(
+    const suppliersKeep = suppliers.filter(
       (supplier) => supplier._id !== idSupplierToDelete
     );
-    console.log( { suppliersNew } );
+
+    //owerwrire list of suppliers with those we wanna keep / without delete
+   setSuppliers (suppliersKeep)
   };
 
   // RENDER LIST of suppliers

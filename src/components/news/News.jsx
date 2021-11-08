@@ -38,10 +38,17 @@ const News = () => {
   };
 
   //delete existing supplier
-  const deleteSupplier = (idSupplier) => {
-    console.log("We wanna delete ID:", idSupplier);
+  const deleteSupplier = (idSupplierToDelete) => {
+    console.log("We wanna delete ID:", idSupplierToDelete);
+
+    // delete item by filtering it out!
+    const suppliersNew = suppliers.filter(
+      (supplier) => supplier._id !== idSupplierToDelete
+    );
+    console.log( { suppliersNew } );
   };
 
+  // RENDER LIST of suppliers
   const jsxSuppliers = suppliers.map((supplier) => (
     <div key={supplier._id}>
       <form>
@@ -56,6 +63,7 @@ const News = () => {
           </div>
           <div className="actions">
             <button type="button" onClick={() => deleteSupplier(supplier._id)}>
+            {/* <button type="button" onClick={ deleteSupplier(supplier._id) }> */}
               X
             </button>
           </div>
@@ -74,6 +82,7 @@ const News = () => {
         <div>
           {/* ADD new supplier form */}
           <form className="frmAdd" onSubmit={addSupplier}>
+          {/* <form className="frmAdd" onSubmit={ () => addSupplier() }> */}
             <label>New Supplier: </label>
             <div>
               <input

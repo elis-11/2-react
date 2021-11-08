@@ -33,8 +33,10 @@ const News = () => {
 
     // create copy of OLD entries and merge with NEW entry
     const suppliersNew = [...suppliers, supplierNew];
+
+    //update supplier list and trigger re-render
     setSuppliers(suppliersNew);
-    setSupplierNew({ ...supplierDefault });
+    setSupplierNew({ supplierDefault }); //clear supplier add form
   };
 
   //delete existing supplier

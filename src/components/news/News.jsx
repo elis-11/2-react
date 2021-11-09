@@ -54,27 +54,8 @@ const News = () => {
 
   // RENDER LIST of suppliers
   const jsxSuppliers = suppliers.map((supplier) => (
-    <div key={supplier._id}>
-      <form>
-        <div className="card">
-          <div>
-            <label>Company: </label>
-            <input type="text" value={supplier.company} />
-          </div>
-          <div>
-            <label>Contact: </label>
-            <input type="text" value={supplier.contact} />
-          </div>
-          <div className="actions">
-            <button type="button" onClick={() => deleteSupplier(supplier._id)}>
-            {/* <button type="button" onClick={ deleteSupplier(supplier._id) }> */}
-              X
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  ));
+
+    ));
   return (
     <div className="News content">
       <header className="header">

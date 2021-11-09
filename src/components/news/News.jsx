@@ -33,7 +33,7 @@ const News = () => {
     console.log("New Supplier to add:", supplierNew);
 
     // create copy of OLD entries and merge with NEW entry
-    const suppliersNew = [...suppliers, supplierNew];
+    const suppliersNew = [...suppliers, { ...supplierNew, _id: Date.now().toString() }];
 
     //update supplier list and trigger re-render
     setSuppliers(suppliersNew);

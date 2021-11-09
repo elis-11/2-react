@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./News.scss";
+import SupplierCard from "./SupplierCard";
 
 const News = () => {
   const supplierDefault = {
@@ -39,23 +40,15 @@ const News = () => {
     setSupplierNew({ supplierDefault }); //clear supplier add form
   };
 
-  //delete existing supplier
-  const deleteSupplier = (idSupplierToDelete) => {
-    console.log("We wanna delete ID:", idSupplierToDelete);
-
-    // delete item by filtering it out!
-    const suppliersKeep = suppliers.filter(
-      (supplier) => supplier._id !== idSupplierToDelete
-    );
-
-    //owerwrire list of suppliers with those we wanna keep / without delete
-   setSuppliers (suppliersKeep)
-  };
-
   // RENDER LIST of suppliers
   const jsxSuppliers = suppliers.map((supplier) => (
-
-    ));
+    <SupplierCard
+      suppliers={suppliers}
+      supplier={supplier}
+      setSuppliers={setSuppliers}
+      key={supplier._id}
+    />
+  ));
   return (
     <div className="News content">
       <header className="header">
@@ -67,7 +60,7 @@ const News = () => {
         <div>
           {/* ADD new supplier form */}
           <form className="frmAdd" onSubmit={addSupplier}>
-          {/* <form className="frmAdd" onSubmit={ () => addSupplier() }> */}
+            {/* <form className="frmAdd" onSubmit={ () => addSupplier() }> */}
             <label>New Supplier: </label>
             <div>
               <input

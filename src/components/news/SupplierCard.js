@@ -1,6 +1,20 @@
 import React from "react";
 
-const SupplierCard = () => {
+const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
+  
+    //delete existing supplier
+  const deleteSupplier = (idSupplierToDelete) => {
+    console.log("We wanna delete ID:", idSupplierToDelete);
+
+    // delete item by filtering it out!
+    const suppliersKeep = suppliers.filter(
+      (supplier) => supplier._id !== idSupplierToDelete
+    );
+
+    //owerwrire list of suppliers with those we wanna keep / without delete
+    setSuppliers(suppliersKeep);
+  };
+
   return (
     <div key={supplier._id}>
       <form>

@@ -56,7 +56,6 @@ const News = () => {
         <h2>UseState with Objects</h2>
         <h2>Suppliers</h2>
         {jsxSuppliers}
-        {/* {jsxSuppliers} */}
         <div>
           {/* ADD new supplier form */}
           <form className="frmAdd" onSubmit={addSupplier}>

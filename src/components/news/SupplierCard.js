@@ -1,10 +1,9 @@
-import React from "react";
 
 const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
   
     //delete existing supplier
   const deleteSupplier = (idSupplierToDelete) => {
-    console.log("We wanna delete ID:", idSupplierToDelete);
+    console.log("We wanna delete ID: ", idSupplierToDelete);
 
     // delete item by filtering it out!
     const suppliersKeep = suppliers.filter(

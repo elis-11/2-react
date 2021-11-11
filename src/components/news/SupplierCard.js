@@ -1,17 +1,27 @@
+import { useState } from "react";
 
 const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
-  
-    //delete existing supplier
-  const deleteSupplier = (idSupplierToDelete) => {
-    console.log("We wanna delete ID: ", idSupplierToDelete);
+  //state for storing edits
+  const [supplierEdit, setsupplierEdit] = useState({ ...supplier });
 
+  // sneak out on some state => watch all the changes!
+  //   useEffect(() => {
+  // console.log({ supplierEdit });
+  //   }, [supplierEdit])
+
+  //delete existing supplier
+  const deleteSupplier = () => {
+    console.log("We wanna delete ID: ", supplier._id);
     // delete item by filtering it out!
-    const suppliersKeep = suppliers.filter(
-      (supplier) => supplier._id !== idSupplierToDelete
-    );
+    const suppliersKeep = suppliers.filter((sup) => sup._id !== supplier._id);
 
     //owerwrire list of suppliers with those we wanna keep / without delete
     setSuppliers(suppliersKeep);
+  };
+
+  // update existing supplier
+  const updateSupplier = () => {
+    console.log("Updating supplier...", supplierEdit);
   };
 
   return (
@@ -19,14 +29,29 @@ const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
       <form>
         <div className="card">
           <div>
-            <label>Company: </label>
-            <input type="text" defaultValue={supplier.company} />
+            <label>Company </label>
+            <input
+              type="text"
+              value={supplierEdit.company}
+              onChange={(e) =>
+                setsupplierEdit({ ...supplierEdit, company: e.target.value })
+              }
+            />
           </div>
           <div>
-            <label>Contact: </label>
-            <input type="text" defaultValue={supplier.contact} />
+            <label>Contact </label>
+            <input
+              type="text"
+              defaultValue={supplierEdit.contact}
+              onChange={(e) =>
+                setsupplierEdit({ ...supplierEdit, contact: e.target.value })
+              }
+            />
           </div>
           <div className="actions">
+            <button type="button" onClick={() => updateSupplier()}>
+              Save
+            </button>
             <button type="button" onClick={() => deleteSupplier(supplier._id)}>
               {/* <button type="button" onClick={ deleteSupplier(supplier._id) }> */}
               X

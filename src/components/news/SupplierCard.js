@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
   //state for storing edits
@@ -22,6 +22,17 @@ const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
   // update existing supplier
   const updateSupplier = () => {
     console.log("Updating supplier...", supplierEdit);
+
+    // take supplierEdit object => find entry in supplier list => and replace / update values
+    // suppliers => []
+    // supplierEdit => {}
+
+    // UPDATE METHODE-3--MAP
+    const suppliersUpdated = suppliers.map((supplier) => {
+      return supplier._id !== supplierEdit._id ? supplier : { ...supplierEdit };
+    });
+    setSuppliers(suppliersUpdated);
+    console.log({ suppliersUpdated });
   };
 
   return (

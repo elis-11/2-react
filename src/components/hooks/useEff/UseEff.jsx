@@ -18,17 +18,27 @@ const UseEff = () => {
       .then((response) => response.json())
       .then((json) => setData(json));
     // console.log('Type change', type);
+
+    return ()=>{
+      console.log(('clean type'));
+    }
   }, [type]);
+
+  const mouseMoveHandler = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
 
   useEffect(() => {
     console.log("ComponentDidMount");
 
-    window.addEventListener("mousemove", (event) => {
-      setPosition({
-        x: event.clientX,
-        y: event.clientY,
-      });
-    });
+    window.addEventListener("mousemove", mouseMoveHandler);
+
+    return () => {
+      window.addEventListener("mousemove", mouseMoveHandler);
+    };
   }, []);
 
   return (

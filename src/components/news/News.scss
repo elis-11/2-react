@@ -1,10 +1,10 @@
 .News {
   text-align: center;
+  color: white;
+  background-color: #282c34;
   header {
-    color: white;
     font-size: calc(10px + 2vmin);
     min-height: 100%;
-    background-color: #282c34;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,34 +12,5 @@
   }
   link {
     color: #282c34;
-  }
-  input {
-    padding: 5px;
-    width: max-content;
-  }
-  form {
-    width: 80vw;
-    display: flex;
-    justify-content: center;
-  }
-  .card {
-    width: 20rem;
-    margin: 5px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-  }
-  .frmAdd {
-    display: block;
-    input {
-      margin: 3px;
-    }
-  }
-  .actions {
-    display: flex;
-    justify-content: center;
-  } 
-  button {
-    margin: 10px 20px;
   }
 }

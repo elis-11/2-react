@@ -15,6 +15,10 @@ const UseEff = () => {
     // console.log('Type change', type);
   }, [type]);
 
+  useEffect(() => {
+    console.log('ComponentDidMount');
+  }, [])
+
   return (
     <div className="UseEff">
       <h2>UseEffect</h2>

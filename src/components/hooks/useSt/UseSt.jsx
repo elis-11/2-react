@@ -1,18 +1,23 @@
-import React, { useState } from 'react'
-import './UseSt.scss'
+import React, { useState } from "react";
+import "./UseSt.scss";
 
 const UseSt = () => {
+  const [counter, setCounter] = useState(0);
 
-const [counter, setCounter] = useState(0)
+  function increment() {
+    setCounter(counter + 1);
+  }
+  function decrement() {
+    setCounter(counter - 1);
+  }
 
   return (
-    <div className='UseSt header'>
-      <h2>Counter: {counter}</h2> 
-      <button className='Add'>Add</button>
-      <button className='Delete'>Delete</button>
-      
+    <div className="UseSt header">
+      <h2>Counter: {counter}</h2>
+      <button onClick={increment}className="Add">Add</button>
+      <button onClick={decrement} className="Delete">Delete</button>
     </div>
-  )
-}
+  );
+};
 
-export default UseSt
+export default UseSt;

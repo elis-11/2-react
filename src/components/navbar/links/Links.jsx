@@ -38,6 +38,9 @@ const Links = () => {
       <div>
         <NavLink className="item" to="/useRef">UseRef</NavLink>
       </div>
+      <div>
+        <NavLink className="item" to="/hooks">Hooks</NavLink>
+      </div>
     </div>
   );
 };

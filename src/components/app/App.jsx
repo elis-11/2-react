@@ -13,6 +13,7 @@ import Settings from "../settings/Settings";
 import Calendar from "../calendar/Calendar";
 import UseRef from "../useRef/UseRef";
 import UseState from "../useState/UseState";
+import Hooks from "../hooks/Hooks";
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             </Route>
           <Route path="/useState">
             <UseState />
+            </Route>
+          <Route path="/hooks">
+            <Hooks />
             </Route>
           <Route path="/">
             <Home />

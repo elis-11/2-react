@@ -11,6 +11,7 @@ import Work from "../work/Work";
 import News from "../news/News";
 import Settings from "../settings/Settings";
 import Calendar from "../calendar/Calendar";
+import UseRef from "../useRef/UseRef";
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           <Route path="/settings">
             <Settings />
           </Route>
+          <Route path="/useRef">
+            <UseRef />
+            </Route>
           <Route path="/">
             <Home />
           </Route>

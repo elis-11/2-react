@@ -29,6 +29,9 @@ const Links = () => {
       <div>
         <NavLink className="item" to="/settings">Settings</NavLink>
       </div>
+      <div>
+        <NavLink className="item" to="/useRef">UseRef</NavLink>
+      </div>
     </div>
   );
 };

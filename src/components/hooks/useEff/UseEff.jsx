@@ -4,6 +4,11 @@ import "./UseEff.scss";
 const UseEff = () => {
   const [type, setType] = useState("users");
   const [data, setData] = useState([]);
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0,
+  });
+
   // useEffect(() =>{
   //   console.log('render');
   // })
@@ -16,8 +21,15 @@ const UseEff = () => {
   }, [type]);
 
   useEffect(() => {
-    console.log('ComponentDidMount');
-  }, [])
+    console.log("ComponentDidMount");
+
+    window.addEventListener("mousemove", (event) => {
+      setPosition({
+        x: event.clientX,
+        y: event.clientY,
+      });
+    });
+  }, []);
 
   return (
     <div className="UseEff">
@@ -28,7 +40,8 @@ const UseEff = () => {
       <button onClick={() => setType("Todos")}>Todos</button>
       <button onClick={() => setType("Posts")}>Posts</button>
 
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(data, null, 2)}</pre>      ----VERS--2 */}
+      <pre>{JSON.stringify(position, null, 2)}</pre>
     </div>
   );
 };

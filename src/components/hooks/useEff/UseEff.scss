@@ -1,5 +1,6 @@
 .UseEff {
   text-align: center;
+  background-color: #282c34;
 
   .header {
     min-height: 100vh;
@@ -12,7 +13,17 @@
   }
 
   h2 {
-    font-size: 50px;
+    font-size: 40px;
     padding: 30px;
+  }
+  button {
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    color: grey;
+    background-color: rgb(233, 119, 119);
+  }
+  .link {
+    color: #61dafb;
   }
 }

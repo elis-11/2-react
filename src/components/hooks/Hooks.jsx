@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "./Hooks.scss";
+import UseEff from "./useEff/UseEff";
 import UseSt from "./useSt/UseSt";
 
 function Hooks() {
 	return (
+		<div className="Hooks">
 		<Router>
 			<section>
 				<h2>Hooks</h2>
@@ -20,21 +22,29 @@ function Hooks() {
 				<nav>
 					<ul className="nav--ul">
 						<li>
-							<Link className="link galerie" to="/hooks/UseSt">
+							<Link className="link" to="/hooks/UseSt">
 								UseState
+							</Link>
+						</li>
+						<li>
+							<Link className="link" to="/hooks/UseEff">
+								UseEffect
 							</Link>
 						</li>
 					</ul>
 				</nav>
 
 				<Switch>
-					{/* <Route path="/hooks/useSt" exact component={UseSt} /> */}
 					<Route path="/hooks/useSt">
 						<UseSt />
+					</Route>
+					<Route path="/hooks/useEff">
+						<UseEff />
 					</Route>
 				</Switch>
 			</section>
 		</Router>
+		</div>
 	);
 }
 

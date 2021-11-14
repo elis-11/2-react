@@ -16,13 +16,30 @@
     justify-content: flex-start;
     align-items: left;
     min-height: 100vh;
-    color: blueviolet;
+    // color: blueviolet;
     padding: 50px;
+  }
+
+  nav {
+    color: rgb(247, 181, 247);
+  }
+
+  .link {
+    color: aqua;
+  }
+  .link:hover {
+    color: rgb(226, 110, 129);
+  }
+  .link:visited {
+    color: beige;
+  }
+  .link:active {
+    color: rgb(199, 141, 141);
   }
 
   /* WORKS TITLE  */
   h2 {
-    color: blueviolet;
+    // color: blueviolet;
     font-weight: bold;
     font-size: 26px;
     margin: 0 0 30px 0;
@@ -31,7 +48,7 @@
 
   /* WORKS PARAGRAPH  */
   p {
-    color: black;
+    color: white;
     margin: 0 0 20px 0;
     padding: 5px;
   }

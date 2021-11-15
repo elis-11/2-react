@@ -6,7 +6,8 @@ const News = () => {
   const supplierDefault = {
     company: "",
     contact: "",
-    phone: "",
+    phone:
+     "",
   };
 
   const [supplierNew, setSupplierNew] = useState(supplierDefault);

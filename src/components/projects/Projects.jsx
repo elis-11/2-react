@@ -21,12 +21,12 @@ function Projects() {
   return (
     <div className="Projects">
       <PostForm create={createPost} />
-      {posts.length !== 0 
-      ? (
+      {posts.length
+      ? 
         <PostList remove={removePost} posts={posts} title="All Posts" />
-      ) : (
+       : 
         <h2 style={{ textAlign: "center" }}>Posts not found!</h2>
-      )}
+      }
     </div>
   );
 }

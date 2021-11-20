@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./Projects.scss";
 import PostList from "./PostList";
 import PostForm from "./PostForm";
+import Select from "./UI/select/Select";
 
 function Projects() {
   const [posts, setPosts] = useState([
@@ -21,12 +22,15 @@ function Projects() {
   return (
     <div className="Projects">
       <PostForm create={createPost} />
-
+      <hr style={{ margin: '15px 0'}}/>
 <div>
-  <select>
-    <option value="value1"></option>
-    <option value="value1"></option>
-  </select>
+<Select 
+defaultValue={"sort by"}
+options={[
+  {value: 'title', name: "name"},
+  {value: 'body', name: "description"}
+]}
+/>
 </div>
 
       {posts.length

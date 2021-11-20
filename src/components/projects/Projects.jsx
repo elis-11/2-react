@@ -21,6 +21,14 @@ function Projects() {
   return (
     <div className="Projects">
       <PostForm create={createPost} />
+
+<div>
+  <select>
+    <option value="value1"></option>
+    <option value="value1"></option>
+  </select>
+</div>
+
       {posts.length
       ? 
         <PostList remove={removePost} posts={posts} title="All Posts" />

@@ -27,7 +27,7 @@ function Projects() {
 	);
 
 	const sortedAndSearchedPosts = useMemo(() => {
-		return sortedPosts.filter(post => post.title.includes(searchQuery))
+		return sortedPosts.filter(post => post.title.toLowerCase().includes(searchQuery.toLowerCase()))
 	}, [ searchQuery, sortedPosts ]);
 
 	const createPost = (newPost) => {
@@ -50,7 +50,7 @@ function Projects() {
 				<MyInput
 					value={searchQuery}
 					onChange={(e) => setSearchQuery(e.target.value)}
-					// 1:13
+					// 1:19:50
 					placeholder="search..."
 				/>
 				<Select
@@ -61,7 +61,7 @@ function Projects() {
 				/>
 			</div>
 
-			{posts.length ? (
+			{sortedAndSearchedPosts.length ? (
 				<PostList remove={removePost} posts={sortedAndSearchedPosts} title="All Posts" />
 			) : (
 				<h2 style={{ textAlign: 'center' }}>Posts not found!</h2>

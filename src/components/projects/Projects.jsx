@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import './Projects.scss';
 import PostList from './PostList';
 import PostForm from './PostForm';
@@ -15,15 +15,16 @@ function Projects() {
 	const [ selectedSort, setSelectedSort ] = useState('');
 	const [ searchQuery, setSearchQuery ] = useState('');
 
-	function getSortedPosts() {
-		console.log('workd');
-		if (selectedSort) {
-			return [ ...posts ].sort((a, b) => a[selectedSort].localeCompare(b[selectedSort]));
-		}
-		return posts;
-	}
-
-	const sortedPosts = getSortedPosts();
+	const sortedPosts = useMemo(
+		() => {
+			console.log('worked');
+			if (selectedSort) {
+				return [ ...posts ].sort((a, b) => a[selectedSort].localeCompare(b[selectedSort]));
+			}
+			return posts;
+		},
+		[ selectedSort, posts ]
+	);
 
 	const createPost = (newPost) => {
 		setPosts([ ...posts, newPost ]);

@@ -4,6 +4,7 @@ import './Projects.scss';
 import PostList from './PostList';
 import PostForm from './PostForm';
 import Select from './UI/select/Select';
+import MyInput from '../UI/input/MyInput';
 
 function Projects() {
 	const [ posts, setPosts ] = useState([
@@ -12,6 +13,17 @@ function Projects() {
 	]);
 
 	const [ selectedSort, setSelectedSort ] = useState('');
+	const [ searchQuery, setSearchQuery ] = useState('');
+
+	function getSortedPosts() {
+		console.log('workd');
+		if (selectedSort) {
+			return [ ...posts ].sort((a, b) => a[selectedSort].localeCompare(b[selectedSort]));
+		}
+		return posts;
+	}
+
+	const sortedPosts = getSortedPosts();
 
 	const createPost = (newPost) => {
 		setPosts([ ...posts, newPost ]);
@@ -21,16 +33,21 @@ function Projects() {
 		setPosts(posts.filter((p) => p.id !== post.id));
 	};
 
-  const sortPosts = (sort) =>{
-    setSelectedSort(sort)
-    setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])))
-  }
-	
-  return (
+	const sortPosts = (sort) => {
+		setSelectedSort(sort);
+	};
+
+	return (
 		<div className="Projects">
 			<PostForm create={createPost} />
 			<hr style={{ margin: '15px 0' }} />
 			<div>
+				<MyInput
+					value={searchQuery}
+					onChange={(e) => setSearchQuery(e.target.value)}
+					// 1:13
+					placeholder="search..."
+				/>
 				<Select
 					value={selectedSort}
 					onChange={sortPosts}
@@ -40,7 +57,7 @@ function Projects() {
 			</div>
 
 			{posts.length ? (
-				<PostList remove={removePost} posts={posts} title="All Posts" />
+				<PostList remove={removePost} posts={sortedPosts} title="All Posts" />
 			) : (
 				<h2 style={{ textAlign: 'center' }}>Posts not found!</h2>
 			)}

@@ -11,11 +11,11 @@ function Projects() {
 		{ id: '1', title: 'JS', body: 'Description' },
 		{ id: '2', title: 'JS', body: 'Description' }
 	]);
-//   1:19:50
+	//   1:19:50
 	// const [ selectedSort, setSelectedSort ] = useState('');
 	// const [ searchQuery, setSearchQuery ] = useState('');
 
-const [filter, setFilter] = useState({sort: '', query: ''});
+	const [ filter, setFilter ] = useState({ sort: '', query: '' });
 
 	const sortedPosts = useMemo(
 		() => {
@@ -28,9 +28,12 @@ const [filter, setFilter] = useState({sort: '', query: ''});
 		[ filter.sort, posts ]
 	);
 
-	const sortedAndSearchedPosts = useMemo(() => {
-		return sortedPosts.filter(post => post.title.toLowerCase().includes(filter.query.toLowerCase()))
-	}, [ filter.query, sortedPosts ]);
+	const sortedAndSearchedPosts = useMemo(
+		() => {
+			return sortedPosts.filter((post) => post.title.toLowerCase().includes(filter.query.toLowerCase()));
+		},
+		[ filter.query, sortedPosts ]
+	);
 
 	const createPost = (newPost) => {
 		setPosts([ ...posts, newPost ]);
@@ -44,15 +47,8 @@ const [filter, setFilter] = useState({sort: '', query: ''});
 		<div className="Projects">
 			<PostForm create={createPost} />
 			<hr style={{ margin: '15px 0' }} />
-			<PostFilter
-			filter={filter}
-			setFilter={setFilter}
-			/>
-			{sortedAndSearchedPosts.length ? (
-				<PostList remove={removePost} posts={sortedAndSearchedPosts} title="All Posts" />
-			) : (
-				<h2 style={{ textAlign: 'center' }}>Posts not found!</h2>
-			)}
+			<PostFilter filter={filter} setFilter={setFilter} />
+			<PostList remove={removePost} posts={sortedAndSearchedPosts} title="All Posts" />
 		</div>
 	);
 }

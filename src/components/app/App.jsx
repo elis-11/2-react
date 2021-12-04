@@ -8,12 +8,12 @@ import About from "../about/About";
 import Projects from "../projects/Projects";
 import Users from "../users/Users";
 import Work from "../work/Work";
-import News from "../news/News";
 import Settings from "../settings/Settings";
 import Calendar from "../calendar/Calendar";
 import UseRef from "../useRef/UseRef";
 import UseState from "../useState/UseState";
 import Hooks from "../hooks/Hooks";
+import Form from "../form/Form";
 
 function App() {
   return (
@@ -33,8 +33,8 @@ function App() {
           <Route path="/work">
             <Work />
           </Route>
-          <Route path="/news">
-            <News />
+          <Route path="/form">
+            <Form />
           </Route>
           <Route path="/calendar">
             <Calendar />

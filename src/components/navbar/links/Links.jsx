@@ -21,7 +21,7 @@ const Links = () => {
         <NavLink className="item" to="/work">Work</NavLink>
       </div>
       <div>
-        <NavLink className="item" to="/news">News</NavLink>
+        <NavLink className="item" to="/form">Form</NavLink>
       </div>
       <div>
         <NavLink className="item" to="/calendar">Calendar</NavLink>

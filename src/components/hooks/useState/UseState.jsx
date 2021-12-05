@@ -47,9 +47,9 @@ const UseState = () => {
 	return (
 		<div className="UseState content">
 			<header className="header">
-				<h2>UseState</h2>
+				{/* <h2>UseState</h2> */}
 				<h2>UseState with Objects</h2>
-				<h2>Suppliers</h2>
+				{/* <h2>Suppliers</h2> */}
 				{jsxSuppliers}
 				<div>
 					{/* ADD new supplier form */}

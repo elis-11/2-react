@@ -30,12 +30,6 @@ const Links = () => {
         <NavLink className="item" to="/settings">Settings</NavLink>
       </div>
       <div>
-        <NavLink className="item" to="/useState">UseState</NavLink>
-      </div>
-      <div>
-        <NavLink className="item" to="/useEffect">UseEffect</NavLink>
-      </div>
-      <div>
         <NavLink className="item" to="/hooks">Hooks</NavLink>
       </div>
     </div>

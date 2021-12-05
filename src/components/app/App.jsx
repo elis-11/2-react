@@ -10,7 +10,6 @@ import Users from "../users/Users";
 import Work from "../work/Work";
 import Settings from "../settings/Settings";
 import Calendar from "../calendar/Calendar";
-import UseState from "../useState/UseState";
 import Hooks from "../hooks/Hooks";
 import Form from "../form/Form";
 
@@ -40,9 +39,6 @@ function App() {
           </Route>
           <Route path="/settings">
             <Settings />
-          </Route>
-          <Route path="/useState">
-            <UseState />
             </Route>
           <Route path="/hooks">
             <Hooks />

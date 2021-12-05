@@ -6,8 +6,8 @@ export const Form = () => {
 	const [ name, setName ] = useState('');
 	const [ nameIsValid, setNameIsValid ] = useState(false);
 
-	const [ pin, setPin ] = useState('');
-	const [ pinIsValid, setPinIsValid ] = useState(false);
+	const [ email, setEmail ] = useState('');
+	const [ emailIsValid, setEmailIsValid ] = useState(false);
 
 	const [ phone, setPhone ] = useState('');
 	const [ phoneIsValid, setPhoneIsValid ] = useState(false);
@@ -17,9 +17,9 @@ export const Form = () => {
 
 	useEffect(
 		() => {
-			setFormIsValid(nameIsValid && pinIsValid && phoneIsValid);
+			setFormIsValid(nameIsValid && emailIsValid && phoneIsValid);
 		},
-		[ nameIsValid, pinIsValid, phoneIsValid ]
+		[ nameIsValid, emailIsValid, phoneIsValid ]
 	);
 
 	const handleName = (e) => {
@@ -32,14 +32,12 @@ export const Form = () => {
 		setName(_name);
 	};
 
-	const handlePin = (e) => {
-		let _pin = e.target.value;
-		if (_pin !== '' && _pin.length === 4) {
-			setPinIsValid(true);
-		} else {
-			setPinIsValid(false);
-		}
-		setPin(_pin)
+	const handleEmail = (e) => {
+		let _email = e.target.value;
+		_email && /[a-zA-z0-9_.-]{2,}@[a-z]{2,}\.[a-z]{2,}/.test(_email)
+			? setEmailIsValid(true)
+			: setEmailIsValid(false);
+		setEmail(_email);
 	};
 
 	const handlePhone = (e) => {
@@ -62,7 +60,6 @@ export const Form = () => {
 		setPayload((prev) => ({
 			...prev,
 			name,
-			pin,
 			phone
 		}));
 	};
@@ -71,30 +68,30 @@ export const Form = () => {
 		<div className="Form">
 			<form>
 				<fieldset>
-					<legend>Order Form</legend>
+					<legend>sing up</legend>
 
 					{/* NAME */}
-					<div className={'row ' + (nameIsValid ? 'valid' : 'invalid')}>
+					<div className={`row + ${nameIsValid ? 'valid' : 'invalid'}`}>
 						<label htmlFor="name">Name</label>
 						<input type="text" id="name" value={name} onChange={handleName} />
 					</div>
-					<div className={'note ' + (nameIsValid ? 'valid' : 'invalid')}>
-						required, minimum 5 and maximum 10 characters
-					</div>
+					<div className={`note ${nameIsValid ? 'valid' : 'invalid'}`}>required, 2 - 20 characters</div>
 
-					{/* PIN */}
-					<div className={'row ' + (pinIsValid ? 'valid' : 'invalid')}>
-						<label htmlFor="pin">Pin</label>
-						<input type="text" id="pin" value={pin} onChange={handlePin} />
+					{/* EMAIL */}
+					<div className={`row + ${emailIsValid ? 'valid' : 'invalid'}`}>
+						<label htmlFor="text">Email</label>
+						<input type="email" id="name" value={email} onChange={handleEmail} />
 					</div>
-					<div className={'note ' + (pinIsValid ? 'valid' : 'invalid')}>required, 4 characters</div>
+					<div className={`note ${emailIsValid ? 'valid' : 'invalid'}`}>
+						<p>User@mail.com</p>
+					</div>
 
 					{/* PHONE */}
-					<div className={'row ' + (phoneIsValid ? 'valid' : 'invalid')}>
+					<div className={`row + ${phoneIsValid ? 'valid' : 'invalid'}`}>
 						<label htmlFor="phone">Phone</label>
 						<input type="text" id="phone" value={phone} onChange={handlePhone} />
 					</div>
-					<div className={'note ' + (phoneIsValid ? 'valid' : 'invalid')}>e.g. 5553332222</div>
+					<div className={`note ${phoneIsValid ? 'valid' : 'invalid'}`}>e.g. 5553332222</div>
 
 					{/* BUTTON */}
 					<div className="buttonRow">

@@ -1,0 +1,32 @@
+.UseRef {
+	text-align: center;
+	background-color: #282c34;
+
+	.header {
+		// min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: calc(10px + 2vmin);
+		color: white;
+	}
+
+	h2 {
+    margin-top: 40px;
+		font-size: 40px;
+		padding: 30px;
+	}
+
+	// button {
+	// 	padding: 10px;
+	// 	margin: 10px;
+	// 	width: 100px;
+	// 	color: grey;
+	// 	background-color: rgb(233, 119, 119);
+	// }
+  
+	.link {
+		color: #fb9261;
+	}
+}

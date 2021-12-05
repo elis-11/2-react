@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import UseState from '../useState/UseState';
 import './Hooks.scss';
+import UseState from './useState/UseState';
 import UseEff from './useEff/UseEff';
 import UseRef from './useRef/UseRef';
 import UseSt from './useSt/UseSt';
@@ -11,8 +11,8 @@ function Hooks() {
 		<div className="Hooks">
 			<Router>
 				<section>
-					<h2>Hooks</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio! Nesciunt!</p>
+					{/* <h2>Hooks</h2> */}
+					{/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio! Nesciunt!</p> */}
 					<nav>
 						<ul className="nav--ul">
 							<li>

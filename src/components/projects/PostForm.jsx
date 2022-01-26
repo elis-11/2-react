@@ -27,7 +27,7 @@ create(newPost)
             value={post.body}
             onChange={(e) =>setPost({...post, body: e.target.value})}
             type="text"
-            placeholder="post name"
+            placeholder="post description"
             />
             <MyButton onClick={addNewPost}>create new post</MyButton>
         </form>

@@ -22,7 +22,7 @@ const UseState = () => {
     {
       _id: "s2",
       company: "Supply you as we can ltd",
-      contact: "Rob",
+      contact: "Robert",
       phone: "+496789",
     },
   ]);

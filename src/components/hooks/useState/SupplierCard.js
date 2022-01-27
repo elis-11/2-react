@@ -1,14 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
   //state for storing edits
   const [supplierEdit, setsupplierEdit] = useState({ ...supplier });
-
-  // sneak out on some state => watch all the changes!
-  //   useEffect(() => {
-  // console.log({ supplierEdit });
-  //   }, [supplierEdit])
 
   //delete existing supplier
   const deleteSupplier = () => {
@@ -23,10 +18,6 @@ const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
   // update existing supplier
   const updateSupplier = () => {
     console.log("Updating supplier...", supplierEdit);
-
-    // take supplierEdit object => find entry in supplier list => and replace / update values
-    // suppliers => []
-    // supplierEdit => {}
 
     // UPDATE METHODE-3--MAP
     const suppliersUpdated = suppliers.map((supplier) => {
@@ -65,7 +56,6 @@ const SupplierCard = ({ supplier, suppliers, setSuppliers }) => {
               Save
             </button>
             <button type="button" onClick={() => deleteSupplier(supplier._id)}>
-              {/* <button type="button" onClick={ deleteSupplier(supplier._id) }> */}
               X
             </button>
           </div>

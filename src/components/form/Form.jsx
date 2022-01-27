@@ -86,7 +86,7 @@ export const Form = () => {
 
 	const handlePassword2 = (e) => {
 		let _password2 = e.target.value;
-		_password2.length >= 5 ? setPassword2IsValid(true) : setPassword2IsValid(false);
+		_password2.length >= 3 ? setPassword2IsValid(true) : setPassword2IsValid(false);
 		setPassword2(_password2);
 	};
 
@@ -155,7 +155,7 @@ export const Form = () => {
 						<input type={passwordsInputType} id="name" value={password1} onChange={handlePassword1} />
 					</div>
 					<div className={`note ${password1IsValid ? 'valid' : 'invalid'}`}>
-						<p>4 characters</p>
+						<p>3 characters</p>
 					</div>
 
 					{/* PASSWORD-BUTTON */}

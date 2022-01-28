@@ -13,12 +13,12 @@ const UseState = () => {
 
   // default dummy suppliers
   const [suppliers, setSuppliers] = useState([
-    {
-      _id: "s1",
-      company: "Supply Unlimited GmbH",
-      contact: "Albert",
-      phone: "+4912345",
-    },
+    // {
+    //   _id: "s1",
+    //   company: "Supply Unlimited GmbH",
+    //   contact: "Albert",
+    //   phone: "+4912345",
+    // },
     {
       _id: "s2",
       company: "Supply you as we can ltd",

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Todos.scss"
 import { FaTrashAlt } from "react-icons/fa";
 
 const Todos = () => {
@@ -36,7 +37,7 @@ const Todos = () => {
   };
 
   return (
-    <main>
+    <main className="Todos">
       {items.length ? ( //empty list 1:33
         <ul>
           {items.map((item) => (

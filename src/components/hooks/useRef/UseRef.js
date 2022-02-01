@@ -36,8 +36,8 @@ function UseRef() {
     if( email.length < 5) {
       setError("Sorry, email must be at least 5 chars long")
     } 
-    else if( password.length < 8) {
-      setError("Sorry, pw must be at least 8 chars")
+    else if( password.length < 4) {
+      setError("Sorry, pw must be at least 4 chars")
     }
     else {
       console.log('Data submitted: ', email, password );

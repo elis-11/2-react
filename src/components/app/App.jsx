@@ -9,9 +9,9 @@ import Projects from "../projects/Projects";
 import Users from "../users/Users";
 import Work from "../work/Work";
 import Settings from "../settings/Settings";
-import Calendar from "../calendar/Calendar";
 import Hooks from "../hooks/Hooks";
 import Form from "../form/Form";
+import Todos from "../todos/Todos";
 
 function App() {
   return (
@@ -34,8 +34,8 @@ function App() {
           <Route path="/form">
             <Form />
           </Route>
-          <Route path="/calendar">
-            <Calendar />
+          <Route path="/todos">
+            <Todos />
           </Route>
           <Route path="/settings">
             <Settings />

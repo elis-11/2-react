@@ -1,18 +1,13 @@
-
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
 import "./Work.scss";
 import Settings from "./pages/Settings";
 import Home from "./pages/Home";
 import { MainContext } from "./mainContext";
 import LanguageManager from "./languageManager";
 
-function Work() {
+export const Work = () => {
   const [theme, setTheme] = useState("light");
   const [language, setLanguage] = useState("english");
 
@@ -33,34 +28,34 @@ function Work() {
       <MainContext.Provider
         value={{ theme, setTheme, language, setLanguage, text }}
       >
-        <Router>
-          <nav>
-            <ul>
-              <li>
-                <NavLink activeClassName="selected" to="/" exact={true}>
-                  {text("home")}
-                </NavLink>
-              </li>
-              
-              <li>
-                <NavLink activeClassName="selected" to="/Settings">
-                  {text("settings")}
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
-          </Switch>
-        </Router>
+        <nav>
+          <ul>
+            <li>
+              <Link
+                to=""
+                // className={(navData) => (navData.isActive ? "active" : "none")}
+              >
+                {text("home")}
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                // className={(navData) => (navData.isActive ? "active" : "none")}
+                to="Settings"
+              >
+                {text("settings")}
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="settings" element={<Settings />}></Route>
+        </Routes>
       </MainContext.Provider>
     </div>
   );
-}
+};
 
-export default Work;
+// export default Work;

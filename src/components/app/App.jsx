@@ -1,54 +1,36 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-// import "../../reset.css";
-import Navbar from "../navbar/Navbar";
-import Home from "../home/Home";
-import About from "../about/About";
-import Projects from "../projects/Projects";
-import Users from "../users/Users";
-import Work from "../work/Work";
-import Settings from "../settings/Settings";
-import Hooks from "../hooks/Hooks";
-import Form from "../form/Form";
-import Todos from "../todos/Todos";
+import { Navbar } from "../navbar/Navbar";
+import { Home } from "../home/Home";
+import { About } from "../about/About";
+import { Projects } from "../projects/Projects";
+import { Users } from "../users/Users";
+import { Work } from "../work/Work";
+import { Settings } from "../settings/Settings";
+import { Hooks } from "../hooks/Hooks";
+import { Form } from "../form/Form";
+import { Todos } from "../todos/Todos";
+import { NotFound } from "./NotFound";
+
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route path="/projects">
-            <Projects />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/work">
-            <Work />
-          </Route>
-          <Route path="/form">
-            <Form />
-          </Route>
-          <Route path="/todos">
-            <Todos />
-          </Route>
-          <Route path="/settings">
-            <Settings />
-            </Route>
-          <Route path="/hooks">
-            <Hooks />
-            </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="projects" element={<Projects />} />
+        <Route path="about" element={<About />} />
+        <Route path="users" element={<Users />} />
+        <Route path="work/*" element={<Work />} />
+        <Route path="form" element={<Form />} />
+        <Route path="todos" element={<Todos />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="hooks/*" element={<Hooks />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
   );
 }
 

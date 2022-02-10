@@ -14,5 +14,14 @@
 		  'navbar container';
 		grid-template-columns: 1fr 11fr;
 		/* grid-gap: 10px; */
-	
+	.NotFound{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 3vw;
+		color: rgb(221, 217, 217);
+		background-color: #282c34;
+
+	}
 }

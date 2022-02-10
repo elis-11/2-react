@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import "./Users.scss";
 import initialUsers from "../../data/showCaseUsers.json";
 
-function Users() {
+export const Users=()=> {
   const [users, setUsers] = useState(initialUsers);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -87,4 +87,4 @@ function Users() {
   );
 }
 
-export default Users;
+// export default Users;

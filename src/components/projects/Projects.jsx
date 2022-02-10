@@ -6,7 +6,7 @@ import PostForm from './PostForm';
 // import Select from './UI/select/Select';
 import PostFilter from './UI/PostFilter';
 
-function Projects() {
+export const Projects=()=> {
 	const [ posts, setPosts ] = useState([
 		{ id: '1', title: 'JS', body: 'Description' },
 		{ id: '2', title: 'JS', body: 'Description' }
@@ -52,4 +52,4 @@ function Projects() {
 		</div>
 	);
 }
-export default Projects;
+// export default Projects;

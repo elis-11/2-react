@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Todos.scss"
 import { FaTrashAlt } from "react-icons/fa";
 
-const Todos = () => {
+export const Todos = () => {
   const [items, setItems] = useState([
     {
       id: 1,
@@ -69,4 +69,4 @@ const Todos = () => {
   );
 };
 
-export default Todos;
+// export default Todos;

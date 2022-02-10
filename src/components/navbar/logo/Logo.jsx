@@ -1,7 +1,7 @@
 import React from "react";
 import "./Logo.scss";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <div className="nav-logo">
       <a
@@ -14,5 +14,3 @@ const Logo = () => {
     </div>
   );
 };
-
-export default Logo;

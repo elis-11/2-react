@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.scss";
 
-const About = () => {
+export const About = () => {
   return (
     <div className="About content">
       <h2>About</h2>
@@ -16,5 +16,3 @@ const About = () => {
     </div>
   );
 };
-
-export default About;

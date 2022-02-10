@@ -8,32 +8,22 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-
-  /* WORKS SECTION  */
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    min-height: 100vh;
-    // color: blueviolet;
-    padding: 50px;
-  }
-
-  nav {
-    color: rgb(247, 181, 247);
-  }
-
-  .link {
+  min-height: 100vh;
+  padding: 50px;
+  list-style: none;
+  // color: blueviolet;
+  // color: rgb(247, 181, 247);
+  a {
+    text-decoration: none;
     color: aqua;
   }
-  .link:hover {
+  a:hover {
     color: rgb(226, 110, 129);
   }
-  .link:visited {
+  a:visited {
     color: beige;
   }
-  .link:active {
+  a:active {
     color: rgb(199, 141, 141);
   }
 

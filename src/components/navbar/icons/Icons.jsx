@@ -1,7 +1,7 @@
 import React from "react";
 import "./Icons.scss";
 
-const Icons = () => {
+export const Icons = () => {
   return (
     <div className="social-icons">
       <ul>
@@ -45,5 +45,3 @@ const Icons = () => {
     </div>
   );
 };
-
-export default Icons;

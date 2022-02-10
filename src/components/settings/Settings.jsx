@@ -1,7 +1,7 @@
 import React from "react";
 import "./Settings.scss";
 
-const Settings = () => {
+export const Settings = () => {
   return (
     <div className="Settings content">
       <h2>Settings</h2>
@@ -17,4 +17,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+// export default Settings;

@@ -1,9 +1,9 @@
-import Icons from "./icons/Icons";
-import Links from "./links/Links";
-import Logo from "./logo/Logo";
+import { Icons } from "./icons/Icons";
+import { Links } from "./links/Links";
+import { Logo } from "./logo/Logo";
 import "./Navbar.scss";
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <nav className="nav">
       <Logo />
@@ -13,4 +13,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+// export default Navbar;

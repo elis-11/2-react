@@ -6,19 +6,20 @@
   align-items: center;
   text-decoration: none;
   // border: 1px solid #ccc;
-
-  .item {
+  
+ a{
+  // .navData {
     display: block;
     justify-content: center;
     align-items: center;
-    color: whitesmoke;
     text-decoration: none;
+    color: whitesmoke;
     text-shadow: 1px 1px grey;
     margin-top: 10px;
     padding-top: 15px;
     font-size: 20px;
   }
-  :hover {
+a:hover {
     color: var(--orchid);
   }
   .item .activeLink {

@@ -14,9 +14,8 @@
   font-size: 4vw;
   color: white;
   width: 100%;
-  // height: 100%;
   height: auto;
-  border: 1px solid rgb(180, 30, 30);
+  // border: 1px solid rgb(180, 30, 30);
 
   header {
     display: flex;
@@ -25,6 +24,9 @@
     width: 100%;
     height: 5vh;
     font-size: 2.5vw;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
     // background-color: var(--react);
     // border: 1px solid white;
   }
@@ -35,16 +37,16 @@
     // overflow-y: auto;
     .card {
       width: 10vw;
-      border: 1px solid white;
+      // border: 1px solid white;
     }
     .container {
-      border: 1px solid white;
+      // border: 1px solid white;
       display: flex;
       justify-content: center;
       ul {
         width: 70%;
         list-style: none;
-        padding: 0.0.5vw;
+        padding: 0.5vw;
         background-color: rgb(202, 200, 200);
       }
       // li::before {
@@ -92,6 +94,9 @@
     width: 100%;
     height: 5vh;
     font-size: 1.5vw;
+    box-shadow: 0 -1px 4px 1px rgba(0, 0, 0, 0.06),
+      0 -1px 6px 1px rgba(0, 0, 0, 0.1);
+
     background-color: var(--react);
     // border: 1px solid white;
   }

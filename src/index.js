@@ -7,11 +7,9 @@ import './var.css';
 import App from './components/app/App.jsx';
 
 ReactDOM.render(
-  <React.StrictMode>
     <BrowserRouter>
     <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+    </BrowserRouter>,
   document.getElementById('root')
 );
 

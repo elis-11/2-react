@@ -2,14 +2,51 @@ import "./Todos.scss";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Content } from "./Content";
+import { useState } from "react";
 
 export const Todos = () => {
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      checked: false,
+      item: "Item 1",
+    },
+    {
+      id: 2,
+      checked: false,
+      item: "Item 2",
+    },
+    {
+      id: 3,
+      checked: false,
+      item: "Item 3",
+    },
+  ]);
+  const handleCheck = (id) => {
+    const listItems = items.map(
+      (item) => (item.id === id ? { ...item, checked: !item.checked } : item) // 1:23 change status
+);
+    setItems(listItems);
+    //! -- LOCALSTORAGE -- 1:26
+    localStorage.setItem("todolist", JSON.stringify(listItems));
+  };
+
+  const handleDelete = (id) => {  //! -- 1:29
+    const listItems = items.filter((item) => item.id !== id);
+    setItems(listItems);
+    localStorage.setItem("todolist", JSON.stringify(listItems));
+  };
+
   // TODO tralala
   return (
     <div className="Todos">
-      <Header />
-      <Content />
-      <Footer />
+      <Header title="Grocery List" />
+      <Content
+      items={items}
+      handleCheck={handleCheck}
+      handleDelete={handleDelete}
+      />
+      <Footer length={items.length} />
     </div>
   );
 };

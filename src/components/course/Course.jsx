@@ -1,25 +1,22 @@
-import React from "react";
+import { useState } from "react";
 import "./Course.scss";
 
 export const Course = () => {
-  // !1 random name
-  const handleChangeName = () => {
+  const [name, setName] = useState("Elis");
+  const [count, setCount] = useState(0);
+
+  const handleNameChange = () => {
     const names = ["Elis", "John", "John Smith", "Robert"];
     const int = Math.floor(Math.random() * names.length);
-    return names[int];
+    setName(names[int]);
   };
-  // !2 click
   const handleClick = () => {
-    console.log("You clicked it");
+    setCount(count + 1);
+    setCount(count + 1);
+    console.log(count);
   };
-  //!3 click name
-  const handleClick3 = (name) => {
-    console.log(`${name} was clicked`);
-  };
-  //!4 click event
-  const handleClick4 = (e) => {
-    // console.log(e);
-    console.log(e.target.innerText);
+  const handleClick2 = (name) => {
+    console.log(count);
   };
 
   return (
@@ -27,16 +24,11 @@ export const Course = () => {
       <h2>Course</h2>
       <p>Page </p>
       <p>Lorem ipsum dolor distinctio!</p>
-      {/* !1 random name  */}
-      <p onDoubleClick={handleClick}>
-        Hello {handleChangeName()}!
-        </p>
-      <button onClick={handleClick}>Click It</button> {/* !2 click  */}
-      <button onClick={() => handleClick3("Lis")}>Click It</button>{" "}
-      {/* !2 click  */}
-      <button onClick={(e) => handleClick4(e)}>Click</button>
+      <p onDoubleClick={handleClick}>Hello {name}!</p>
+
+      <button onClick={handleNameChange}>Change Name</button>
+      <button onClick={handleClick}>Count</button>
+      <button onClick={handleClick2}>Count 2</button>
     </div>
   );
 };
-
-// export default Course;

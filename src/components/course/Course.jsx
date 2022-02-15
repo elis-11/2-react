@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./Course.scss";
 
 export const Course = () => {
-  const [name, setName] = useState("Elis");
+  const [name, setName] = useState("Elisa");
   const [count, setCount] = useState(0);
 
   const handleNameChange = () => {
-    const names = ["Elis", "John", "John Smith", "Robert"];
+    const names = ["Elisa", "Simon", "Dr. Hartman", "Robert"];
     const int = Math.floor(Math.random() * names.length);
     setName(names[int]);
   };

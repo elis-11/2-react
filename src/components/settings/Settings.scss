@@ -1,4 +1,9 @@
 .Settings {
   grid-area: container;
-  background-color: var(--beige);
+  background-color: var(--react);
+  color: var(--white);
+  display: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

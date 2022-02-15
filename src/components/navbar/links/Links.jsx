@@ -59,6 +59,12 @@ export const Links = () => {
         >
           Hooks
         </NavLink>
+        <NavLink
+          to="/new"
+          className={(navData) => (navData.isActive ? "active" : "none")}
+        >
+          New
+        </NavLink>
       </div>
   );
 };

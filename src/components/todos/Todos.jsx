@@ -1,4 +1,5 @@
 import { useState } from "react";
+import card from '../../assets/nobg.png'
 import "./Todos.scss"
 import { FaTrashAlt } from "react-icons/fa";
 
@@ -27,17 +28,18 @@ export const Todos = () => {
     );
     setItems(listItems);
     // -- LOCALSTORAGE --
-    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+    localStorage.setItem("todolist", JSON.stringify(listItems));
   };
 
   const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
     setItems(listItems);
-    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+    localStorage.setItem("todolist", JSON.stringify(listItems));
   };
 
   return (
     <main className="Todos">
+      <img src={card} className='card' alt="" />
       {items.length ? ( //empty list 1:33
         <ul>
           {items.map((item) => (
@@ -63,7 +65,7 @@ export const Todos = () => {
           ))}
         </ul>
       ) : (
-        <p style={{ marginTop: "2vw" }}>Your list is empty.</p> //empty list 1:33
+        <p style={{ marginTop: "1vw", fontSize: "2vw" }}>Your list is empty.</p> //empty list 1:33
       )}
     </main>
   );

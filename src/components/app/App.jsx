@@ -12,6 +12,7 @@ import { Hooks } from "../hooks/Hooks";
 import { Form } from "../form/Form";
 import { Todos } from "../todos/Todos";
 import { NotFound } from "./NotFound";
+import { New } from "../new/New";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="todos" element={<Todos />} />
         <Route path="settings" element={<Settings />} />
         <Route path="hooks/*" element={<Hooks />} />
+        <Route path="new/*" element={<New />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
       </Routes>

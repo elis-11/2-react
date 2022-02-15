@@ -8,13 +8,15 @@
   align-items: center;
   justify-content: center;
   // justify-content: space-between;
-  background-color: #282c34;
+  background-color: var(--react);
+  // background-color: #282c34;
   flex-direction: column;
   font-size: 4vw;
   color: white;
   width: 100%;
   // height: 100%;
   height: auto;
+  border: 1px solid rgb(180, 30, 30);
 
   header {
     display: flex;
@@ -23,56 +25,63 @@
     width: 100%;
     height: 5vh;
     font-size: 2.5vw;
-    background-color: var(--react);
+    // background-color: var(--react);
     // border: 1px solid white;
   }
   main {
+    width: 100%;
+    height: auto;
     flex-grow: 1;
-    overflow-y: auto;
-    .container{
+    // overflow-y: auto;
+    .card {
+      width: 10vw;
+      border: 1px solid white;
+    }
+    .container {
+      border: 1px solid white;
       display: flex;
       justify-content: center;
-    ul {
-      width: 80%;
-      list-style: none;
-      padding: 0.3vw;
-      background-color: rgb(202, 200, 200);
-    }
-    li::before {
-      content: "\200B";
-    }
-    .item {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      // font-size: 1vw;
-      height: 5vh;
-      padding: 0.5vw;
-      margin: 0.5vw;
-      background-color: rgb(168, 167, 167);
-      input {
-        width: 2vw;
-        height: 1.7vw;
-        text-align: center;
-        cursor: pointer;
+      ul {
+        width: 70%;
+        list-style: none;
+        padding: 0.0.5vw;
+        background-color: rgb(202, 200, 200);
       }
-      input :focus + label {
-        text-decoration: underline;
-      }
-      label {
-        font-size: 2vw;
-        flex-grow: 1;
-      }
-      svg {
-        width: 1.5vw;
-        color: rgb(231, 231, 233);
-        cursor: pointer;
-      }
-      svg:focus,
-      svg:hover {
-        color: gray;
-        outline: none;
-      }
+      // li::before {
+      //   content: "\200B";
+      // }
+      .item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        // font-size: 1vw;
+        height: 5vh;
+        padding: 0.5vw;
+        margin: 0.5vw;
+        background-color: rgb(168, 167, 167);
+        input {
+          width: 2vw;
+          height: 1.7vw;
+          text-align: center;
+          cursor: pointer;
+        }
+        input :focus + label {
+          text-decoration: underline;
+        }
+        label {
+          font-size: 2vw;
+          flex-grow: 1;
+        }
+        svg {
+          width: 1.5vw;
+          color: rgb(231, 231, 233);
+          cursor: pointer;
+        }
+        svg:focus,
+        svg:hover {
+          color: gray;
+          outline: none;
+        }
       }
     }
   }
@@ -85,6 +94,5 @@
     font-size: 1.5vw;
     background-color: var(--react);
     // border: 1px solid white;
-
   }
 }

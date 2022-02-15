@@ -1,13 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-import { Navbar } from "../navbar/Navbar";
+import { Navbar } from "../layout/Navbar";
 import { Home } from "../home/Home";
 import { About } from "../about/About";
 import { Projects } from "../projects/Projects";
 import { Users } from "../users/Users";
 import { Work } from "../work/Work";
-import { Settings } from "../settings/Settings";
+import { Course } from "../course/Course";
 import { Hooks } from "../hooks/Hooks";
 import { Form } from "../form/Form";
 import { Todos } from "../todos/Todos";
@@ -26,7 +26,7 @@ function App() {
         <Route path="work/*" element={<Work />} />
         <Route path="form" element={<Form />} />
         <Route path="todos" element={<Todos />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="course" element={<Course />} />
         <Route path="hooks/*" element={<Hooks />} />
         <Route path="new/*" element={<New />} />
         <Route path="*" element={<NotFound />} />

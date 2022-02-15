@@ -48,10 +48,10 @@ export const Links = () => {
           Todos
         </NavLink>
         <NavLink
-          to="/settings"
+          to="/course"
           className={(navData) => (navData.isActive ? "active" : "none")}
         >
-          Settings
+          Course
         </NavLink>
         <NavLink
           to="/hooks"

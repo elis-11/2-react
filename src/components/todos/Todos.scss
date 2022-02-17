@@ -3,84 +3,116 @@
 }
 
 .Todos {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  // justify-content: space-between;
-  background-color: var(--react);
-  // background-color: #282c34;
-  flex-direction: column;
-  font-size: 4vw;
-  color: white;
   width: 100%;
-  height: auto;
-  // border: 1px solid rgb(180, 30, 30);
+  height: 100vh;
+  display: column;
+  flex-direction: column;
+  align-content: space-between;
+  text-align: center;
+  background-color: var(--react);
+  // font-size: 4vw;
+  color: white;
 
   header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 5vh;
-    font-size: 2.5vw;
+    font-size: 2vw;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
     // background-color: var(--react);
-    // border: 1px solid white;
   }
-  main {
-    width: 100%;
-    height: auto;
-    flex-grow: 1;
-    // overflow-y: auto;
-    .card {
-      width: 10vw;
-      // border: 1px solid white;
-    }
-    .container {
-      // border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      ul {
-        width: 70%;
-        list-style: none;
-        padding: 0.5vw;
-        // background-color: rgb(202, 200, 200);
+  .content {
+    height: 90vh;
+    main {
+      // height: auto;
+      flex-grow: 1;
+      .card {
+        width: 10vw;
       }
-      // li::before {
-      //   content: "\200B";
-      // }
-      .item {
+      .container {
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        // font-size: 1vw;
-        height: 5vh;
-        padding: 0.5vw;
-        margin: 0.5vw;
+        // width: 80%;
+        justify-content: center;
+        ul {
+          width: 65%;
+          list-style: none;
+          padding: 0.5vw;
+        }
+        .item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          // font-size: 1vw;
+          height: 5vh;
+          padding: 0.5vw;
+          margin: 0.5vw;
+          background-color: rgb(168, 167, 167);
+          input {
+            width: 2vw;
+            height: 1.7vw;
+            text-align: center;
+            cursor: pointer;
+          }
+          input :focus + label {
+            text-decoration: underline;
+          }
+          label {
+            font-size: 2vw;
+            flex-grow: 1;
+          }
+          svg {
+            width: 1.5vw;
+            color: rgb(231, 231, 233);
+            cursor: pointer;
+          }
+          svg:focus,
+          svg:hover {
+            color: gray;
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .Add {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .container {
+        // flex-grow: 1;
+        width: 63%;
+        height: 4vh;
+        display: flex;
+        justify-content: center;
+        list-style: none;
         background-color: rgb(168, 167, 167);
-        input {
-          width: 2vw;
-          height: 1.7vw;
-          text-align: center;
-          cursor: pointer;
-        }
-        input :focus + label {
-          text-decoration: underline;
-        }
+        margin-top: 3vh;
+
         label {
-          font-size: 2vw;
-          flex-grow: 1;
+          position: absolute;
+          left: -999999px;
         }
-        svg {
-          width: 1.5vw;
-          color: rgb(231, 231, 233);
+        input[type="text"] {
+          flex-grow: 1;
+          // max-width: calc(100% - 50px);
+          color: rgb(245, 245, 248);
+          font-size: 1rem;
+          outline: none;
+          background-color: rgb(168, 167, 167);
+        }
+        button {
+          // height: 48px;
+          min-width: 48px;
+          font-size: 1rem;
+          background-color: rgb(168, 167, 167);
+          color: rgb(245, 245, 248);
           cursor: pointer;
         }
-        svg:focus,
-        svg:hover {
+        button:focus,
+        button:hover {
           color: gray;
           outline: none;
         }
@@ -89,15 +121,14 @@
   }
   footer {
     display: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    text-align: center;
     height: 5vh;
+    bottom: 0;
     font-size: 1.5vw;
     box-shadow: 0 -1px 4px 1px rgba(0, 0, 0, 0.06),
       0 -1px 6px 1px rgba(0, 0, 0, 0.1);
-
     background-color: var(--react);
-    // border: 1px solid white;
   }
 }

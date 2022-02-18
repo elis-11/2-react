@@ -6,7 +6,7 @@ export const Course = () => {
   const [count, setCount] = useState(0);
 
   const handleNameChange = () => {
-    const names = ["Elisa", "Simon", "Dr. Hartman", "Robert"];
+    const names = ["Elisa", "Simon", "Dr. Hartmann", "Robert"];
     const int = Math.floor(Math.random() * names.length);
     setName(names[int]);
   };

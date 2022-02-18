@@ -3,6 +3,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Content } from "./Content";
 import { useState } from "react";
+import { AddItem } from "./AddItem";
 
 export const Todos = () => {
   const [items, setItems] = useState([
@@ -40,14 +41,18 @@ export const Todos = () => {
   // TODO tralala
   return (
     <div className="Todos">
-      <Header title="Grocery List" />
+        <Header title="Grocery List" />
+        <div className="content">
+      <AddItem />
       <Content
       items={items}
       handleCheck={handleCheck}
       handleDelete={handleDelete}
       />
+      </div>
       <Footer length={items.length} />
     </div>
   );
 };
 // https://www.youtube.com/watch?v=RVFAyFWO4go&list=LL&index=73&t=1033s
+//! 2:10 17.02

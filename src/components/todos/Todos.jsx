@@ -1,10 +1,10 @@
-import "./Todos.scss";
+import { Search } from "./Search";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Content } from "./Content";
 import { useState } from "react";
 import { AddItem } from "./AddItem";
-import { Search } from "./Search";
+import "./Todos.scss";
 
 export const Todos = () => {
   const [items, setItems] = useState(
@@ -23,7 +23,7 @@ export const Todos = () => {
     const myNewItem = { id, checked: false, item };
     const listItems = [...items, myNewItem];
     setAndSaveItems(listItems);
-    localStorage.setItem("todolist", JSON.stringify(listItems));
+    // localStorage.setItem("todolist", JSON.stringify(listItems));
   };
 
   const handleCheck = (id) => {

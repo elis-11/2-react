@@ -23,32 +23,53 @@ export const Todos = () => {
       item: "Item 3",
     },
   ]);
+  const [newItem, setNewItem] = useState("");
+
+const setAndSaveItems = (newItems)=>{
+  setItems(newItems);
+localStorage.setItem("todolist", JSON.stringify(newItems));
+
+}
+
+const addItem=(item) => {
+  const id= items.length ? items[items.length -1].id +1 : 1
+  const myNewItem ={id, checked:false, item}
+const listItems= [...items, myNewItem]
+setAndSaveItems(listItems);
+localStorage.setItem("todolist", JSON.stringify(listItems));
+}
+
   const handleCheck = (id) => {
-    const listItems = items.map(
-      (item) => (item.id === id ? { ...item, checked: !item.checked } : item) // 1:23 change status
-);
-    setItems(listItems);
-    //! -- LOCALSTORAGE -- 1:26
-    localStorage.setItem("todolist", JSON.stringify(listItems));
+    const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+setAndSaveItems(listItems);
   };
 
-  const handleDelete = (id) => {  //! -- 1:29
+  const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
-    localStorage.setItem("todolist", JSON.stringify(listItems));
-  };
+setAndSaveItems(listItems);
 
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!newItem) return;
+    addItem(newItem);
+    setNewItem("");
+  };
   // TODO tralala
   return (
     <div className="Todos">
-        <Header title="Grocery List" />
-        <div className="content">
-      <AddItem />
-      <Content
-      items={items}
-      handleCheck={handleCheck}
-      handleDelete={handleDelete}
-      />
+      <Header title="Grocery List" />
+      <div className="content">
+        <AddItem
+          newItem={newItem}
+          setNewItem={setNewItem}
+          handleSubmit={handleSubmit}
+        />
+        <Content
+          items={items}
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+        />
       </div>
       <Footer length={items.length} />
     </div>

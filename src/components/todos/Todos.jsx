@@ -7,32 +7,35 @@ import { AddItem } from "./AddItem";
 import { Search } from "./Search";
 
 export const Todos = () => {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('todolist')));
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("todolist"))
+  );
   const [newItem, setNewItem] = useState("");
-  const [search, setSearch]= useState('')
+  const [search, setSearch] = useState("");
 
-const setAndSaveItems = (newItems)=>{
-  setItems(newItems);
-localStorage.setItem("todolist", JSON.stringify(newItems));
-}
+  const setAndSaveItems = (newItems) => {
+    setItems(newItems);
+    localStorage.setItem("todolist", JSON.stringify(newItems));
+  };
 
-const addItem=(item) => {
-  const id= items.length ? items[items.length -1].id +1 : 1
-  const myNewItem ={id, checked:false, item}
-const listItems= [...items, myNewItem]
-setAndSaveItems(listItems);
-localStorage.setItem("todolist", JSON.stringify(listItems));
-}
+  const addItem = (item) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, checked: false, item };
+    const listItems = [...items, myNewItem];
+    setAndSaveItems(listItems);
+    localStorage.setItem("todolist", JSON.stringify(listItems));
+  };
 
   const handleCheck = (id) => {
-    const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
-setAndSaveItems(listItems);
+    const listItems = items.map((item) =>
+      item.id === id ? { ...item, checked: !item.checked } : item
+    );
+    setAndSaveItems(listItems);
   };
 
   const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
-setAndSaveItems(listItems);
-
+    setAndSaveItems(listItems);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,12 +53,11 @@ setAndSaveItems(listItems);
           setNewItem={setNewItem}
           handleSubmit={handleSubmit}
         />
-        <Search
-        search={search}
-        setSearch={setSearch}
-        />
+        <Search search={search} setSearch={setSearch} />
         <Content
-          items={items}
+          items={items.filter((item) =>
+            item.item.toLowerCase().includes(search.toLowerCase())
+          )}
           handleCheck={handleCheck}
           handleDelete={handleDelete}
         />

@@ -4,15 +4,16 @@ import { Footer } from "./Footer";
 import { Content } from "./Content";
 import { useState } from "react";
 import { AddItem } from "./AddItem";
+import { Search } from "./Search";
 
 export const Todos = () => {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('todolist')));
   const [newItem, setNewItem] = useState("");
+  const [search, setSearch]= useState('')
 
 const setAndSaveItems = (newItems)=>{
   setItems(newItems);
 localStorage.setItem("todolist", JSON.stringify(newItems));
-
 }
 
 const addItem=(item) => {
@@ -42,12 +43,16 @@ setAndSaveItems(listItems);
   // TODO tralala
   return (
     <div className="Todos">
-      <Header title="Grocery List" />
+      <Header title="Todo List" />
       <div className="content">
         <AddItem
           newItem={newItem}
           setNewItem={setNewItem}
           handleSubmit={handleSubmit}
+        />
+        <Search
+        search={search}
+        setSearch={setSearch}
         />
         <Content
           items={items}

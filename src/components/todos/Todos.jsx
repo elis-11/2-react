@@ -1,15 +1,14 @@
+import { useState } from "react";
 import { Search } from "./Search";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Content } from "./Content";
-import { useState } from "react";
 import { AddItem } from "./AddItem";
 import "./Todos.scss";
 
 export const Todos = () => {
-  const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem("todolist"))
-  );
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem
+    ("todolist")));
   const [newItem, setNewItem] = useState("");
   const [search, setSearch] = useState("");
 
@@ -23,7 +22,6 @@ export const Todos = () => {
     const myNewItem = { id, checked: false, item };
     const listItems = [...items, myNewItem];
     setAndSaveItems(listItems);
-    // localStorage.setItem("todolist", JSON.stringify(listItems));
   };
 
   const handleCheck = (id) => {

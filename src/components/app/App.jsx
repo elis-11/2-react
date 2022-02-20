@@ -26,7 +26,7 @@ function App() {
         <Route path="work/*" element={<Work />} />
         <Route path="form" element={<Form />} />
         <Route path="todos" element={<Todos />} />
-        <Route path="course" element={<Course />} />
+        <Route path="course/*" element={<Course />} />
         <Route path="hooks/*" element={<Hooks />} />
         <Route path="new/*" element={<New />} />
         <Route path="*" element={<NotFound />} />

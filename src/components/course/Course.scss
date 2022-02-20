@@ -1,9 +1,30 @@
 .Course {
   grid-area: container;
   background-color: var(--react);
-  color: var(--white);
+  // color: var(--white);
   display: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
+  ul{
+    height: 50px;
+    color: rgb(243, 177, 177);
+    padding: 15px;
+    a{
+      color: rgb(143, 140, 140);
+      text-decoration: none;
+      padding: 10px;
+      font-size: 22px;
+      :hover{
+        color: rgb(192, 65, 65);
+      }
+    }
+  }
+  .Name{
+    color: rgb(252, 249, 249);
+    // color: var(--grey);
+  }
+  .Color{
+    color: rgb(252, 249, 249);
+  }
 }

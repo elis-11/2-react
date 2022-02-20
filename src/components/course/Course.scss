@@ -1,30 +1,43 @@
 .Course {
   grid-area: container;
   background-color: var(--react);
-  // color: var(--white);
   display: column;
-  justify-content: space-around;
   align-items: center;
   text-align: center;
-  ul{
+  min-height: 100vh;
+  ul {
     height: 50px;
     color: rgb(243, 177, 177);
     padding: 15px;
-    a{
+    a {
       color: rgb(143, 140, 140);
       text-decoration: none;
       padding: 10px;
       font-size: 22px;
-      :hover{
-        color: rgb(192, 65, 65);
-      }
+    }
+    :hover {
+      color: rgb(253, 249, 249);
     }
   }
-  .Name{
+  .Name {
     color: rgb(252, 249, 249);
-    // color: var(--grey);
   }
-  .Color{
+  .Color {
+    display: column;
+    justify-content: center;
+    align-items: center;
     color: rgb(252, 249, 249);
+    .square {
+      display: column;
+align-items: center;
+      width: 200px;
+      height: 200px;
+      border-radius: .25rem;
+      border: 1px solid rgb(233, 233, 233);
+    }
+    form {
+      width: 200px;
+      height: 100px;
+    }
   }
 }

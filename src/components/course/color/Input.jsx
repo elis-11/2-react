@@ -1,7 +1,22 @@
-import React from 'react'
+import colorNames from "colornames";
+import '../Course.scss';
 
-export const Input = () => {
+
+export const Input = ({ colorValue, setColorValue, setHexValue }) => {
   return (
-    <div>Input</div>
-  )
-}
+    <form onSubmit={(e) => e.preventDefault()}>
+      <label>Add Color:</label>
+      <input
+        autoFocus
+        type="text"
+        placeholder="Add color name"
+        required
+        value={colorValue}
+        onChange={(e) => {
+            setColorValue(e.target.value)
+            setHexValue(colorNames(e.target.value))
+        }}
+      />
+    </form>
+  );
+};

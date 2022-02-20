@@ -5,7 +5,7 @@ import { ItemList } from "./ItemList";
 
 export const Content = ({ items, handleCheck, handleDelete }) => {
   return (
-    <main>
+    <>
       <div className="container">
         {items.length ? ( //! empty list 1:33
           <ItemList
@@ -22,6 +22,6 @@ export const Content = ({ items, handleCheck, handleDelete }) => {
           <div>
             <img src={card} className="card" alt="" />
           </div>
-    </main>
+    </>
   );
 };

@@ -4,6 +4,7 @@
   display: column;
   align-items: center;
   text-align: center;
+  width: 100%;
   min-height: 100vh;
   ul {
     height: 50px;
@@ -27,17 +28,24 @@
     justify-content: center;
     align-items: center;
     color: rgb(252, 249, 249);
+    width: 50%;
+
     .square {
       display: column;
-align-items: center;
+      align-items: center;
       width: 200px;
       height: 200px;
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       border: 1px solid rgb(233, 233, 233);
     }
-    form {
-      width: 200px;
-      height: 100px;
+    .Input{
+      form {
+        width: 200px;
+        min-height: 100px;
+      }
+      button{
+        width: 100%;
+      }
     }
   }
 }

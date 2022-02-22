@@ -67,7 +67,7 @@ const Todos = () => {
     }
     const reqUrl = `${API_URL}/${id}`
     const result = await apiRequest(reqUrl, updateOptions)
-    if (result) setFetchError(resul) 
+    if (result) setFetchError(result) 
   };
 
   const handleDelete = (id) => {

@@ -3,6 +3,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Content } from "./Content";
 import { AddItem } from "./AddItem";
+import apiRequest from "./apiRequest";
 import { useEffect, useState } from "react";
 import "./Todos.scss";
 
@@ -39,6 +40,17 @@ const Todos = () => {
     const myNewItem = { id, checked: false, item };
     const listItems = [...items, myNewItem];
     setItems(listItems);
+
+    const postOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(myNewItem),
+    };
+    // const result = await apiRequest(API_URL, postOptions)
+    const result = apiRequest(API_URL, postOptions)
+    if (result) setFetchError(result);
   };
 
   const handleCheck = (id) => {
@@ -58,7 +70,7 @@ const Todos = () => {
     addItem(newItem);
     setNewItem("");
   };
-  // TODO 3:46
+  // TODO 3:46 -ApiRequest
   return (
     <div className="Todos">
       <Header title="Todo List" />

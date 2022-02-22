@@ -3,17 +3,17 @@
         {
             "id": 1,
             "checked": false,
-            "iten": "Todo"
+            "item": "Todo"
         },
         {
             "id": 2,
             "checked": false,
-            "iten": "Doing"
+            "item": "Doing"
         },
         {
             "id": 3,
             "checked": false,
-            "iten": "Done"
+            "item": "Done"
         }
     ]
 }

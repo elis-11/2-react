@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
 import { Search } from "./Search";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Content } from "./Content";
 import { AddItem } from "./AddItem";
+import { useEffect, useState } from "react";
 import "./Todos.scss";
 
-export const Todos = () => {
+const Todos = () => {
   const API_URL = "http://localhost:3500/items";
 
   const [items, setItems] = useState([]);
@@ -25,14 +25,13 @@ export const Todos = () => {
         setFetchError(null);
       } catch (err) {
         setFetchError(err.message);
-      } finally{
-        setIsLoading(false)
+      } finally {
+        setIsLoading(false);
       }
     };
     setTimeout(() => {
       (async () => await fetchItems())();
     }, 2000);
-
   }, []);
 
   const addItem = (item) => {
@@ -59,7 +58,7 @@ export const Todos = () => {
     addItem(newItem);
     setNewItem("");
   };
-  // TODO tralala
+  // TODO 3:46
   return (
     <div className="Todos">
       <Header title="Todo List" />
@@ -72,17 +71,23 @@ export const Todos = () => {
         <Search search={search} setSearch={setSearch} />
         <main>
           {isLoading && <p>Loading...</p>}
-          {fetchError && <p style={{ color: "red" }}>{`Error: ${fetchError}`}</p>
-          }
-          {!fetchError && !isLoading && <Content
+          {fetchError && (
+            <p style={{ color: "red" }}>{`Error: ${fetchError}`}</p>
+          )}
+          {!fetchError && !isLoading && (
+            <Content
               items={items.filter((item) =>
-               ((item.item).toLowerCase()).includes(search.toLowerCase()))}
+                item.item.toLowerCase().includes(search.toLowerCase())
+              )}
               handleCheck={handleCheck}
               handleDelete={handleDelete}
-            />}
+            />
+          )}
         </main>
       </div>
       <Footer length={items.length} />
     </div>
   );
 };
+
+export default Todos;

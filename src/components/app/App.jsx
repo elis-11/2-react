@@ -10,7 +10,7 @@ import { Work } from "../work/Work";
 import { Course } from "../course/Course";
 import { Hooks } from "../hooks/Hooks";
 import { Form } from "../form/Form";
-import { Todos } from "../todos/Todos";
+import  Todos  from "../todos/Todos";
 import { NotFound } from "./NotFound";
 import { New } from "../new/New";
 

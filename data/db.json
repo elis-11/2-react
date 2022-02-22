@@ -7,33 +7,38 @@
     },
     {
       "id": 2,
-      "checked": false,
+      "checked": true,
       "item": "Doing"
     },
     {
       "id": 3,
-      "checked": false,
+      "checked": true,
       "item": "Done"
     },
     {
       "id": 4,
-      "checked": false,
+      "checked": true,
       "item": "Cookies"
     },
     {
-      "id": 5,
-      "checked": false,
-      "item": "dshdkhkhsfd"
-    },
-    {
-      "id": 6,
-      "checked": false,
-      "item": "fidskskfdjsfs"
-    },
-    {
       "id": 7,
-      "checked": false,
+      "checked": true,
       "item": "dfhsjdsgjgjfdj"
+    },
+    {
+      "id": 8,
+      "checked": false,
+      "item": "rhtkehrjkhwkr"
+    },
+    {
+      "id": 9,
+      "checked": false,
+      "item": "weriuzwieziw"
+    },
+    {
+      "id": 10,
+      "checked": false,
+      "item": "weriweiuzrw"
     }
   ]
 }

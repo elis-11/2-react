@@ -20,7 +20,7 @@ https://jsonplaceholder.typicode.com/posts
 ### Structure
 
 ```
-portfolio
+react-apies
  │
  │─── public
  │─── src

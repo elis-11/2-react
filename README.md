@@ -1,6 +1,3 @@
-## Web deploy:
-https://elis-react-apis.netlify.app/
-
 # Link to components
 https://jsonplaceholder.typicode.com/posts
 

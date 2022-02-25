@@ -42,5 +42,8 @@
   "diffEditor.wordWrap": "on",
   "editor.wordWrap": "on"
   // ,
-  // "editor.wordWrap": "on"
+  // "editor.wordWrap": "on",
+    "files.exclude": {
+    "node_modules": true
+  }
 }

@@ -9,7 +9,7 @@ import PostFilter from './UI/PostFilter';
 export const Projects=()=> {
 	const [ posts, setPosts ] = useState([
 		{ id: '1', title: 'JS', body: 'Description' },
-		{ id: '2', title: 'JS', body: 'Description' }
+		{ id: '2', title: 'React', body: 'Description' }
 	]);
 	//   1:19:50
 	// const [ selectedSort, setSelectedSort ] = useState('');

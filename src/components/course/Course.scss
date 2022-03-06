@@ -1,7 +1,8 @@
 .Course {
   grid-area: container;
   background-color: var(--react);
-  display: column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
@@ -24,9 +25,11 @@
     color: rgb(252, 249, 249);
   }
   .Color {
-    display: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: rgb(252, 249, 249);
     width: 50%;
 
@@ -38,7 +41,7 @@
       border-radius: 0.25rem;
       border: 1px solid rgb(233, 233, 233);
     }
-    .Input{
+    .input{
       form {
         width: 200px;
         min-height: 100px;

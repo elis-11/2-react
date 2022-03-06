@@ -7,12 +7,12 @@
     },
     {
       "id": 2,
-      "checked": false,
+      "checked": true,
       "item": "Doing"
     },
     {
       "id": 3,
-      "checked": false,
+      "checked": true,
       "item": "Done"
     },
     {
@@ -21,9 +21,14 @@
       "item": "Cookies"
     },
     {
-      "id": 10,
+      "id": 5,
       "checked": false,
-      "item": "weriweiuzrw"
+      "item": "iwzrierwqz"
+    },
+    {
+      "id": 8,
+      "checked": false,
+      "item": "weriwizw"
     }
   ]
 }

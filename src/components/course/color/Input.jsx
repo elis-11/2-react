@@ -9,7 +9,7 @@ export const Input = ({
   setDarkText,
 }) => {
   return (
-    <div className="Input">
+    <div className="input">
       <form onSubmit={(e) => e.preventDefault()}>
         <label>Add Color:</label>
         <input

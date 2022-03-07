@@ -2,33 +2,23 @@
   "items": [
     {
       "id": 1,
-      "checked": true,
+      "checked": false,
       "item": "Todo"
     },
     {
       "id": 2,
-      "checked": true,
+      "checked": false,
       "item": "Doing"
     },
     {
       "id": 3,
-      "checked": true,
+      "checked": false,
       "item": "Done"
     },
     {
       "id": 4,
       "checked": false,
       "item": "Cookies"
-    },
-    {
-      "id": 5,
-      "checked": false,
-      "item": "iwzrierwqz"
-    },
-    {
-      "id": 8,
-      "checked": false,
-      "item": "weriwizw"
     }
   ]
 }

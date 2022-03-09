@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./Users.scss";
-import initialUsers from "../../data/showCaseUsers.json";
+// import initialUsers from "../../data/showCaseUsers.json";
+import initialUsers from "./data/showCaseUsers.json";
 
 export const Users=()=> {
   const [users, setUsers] = useState(initialUsers);

@@ -1,17 +1,16 @@
 * {
+  // background-color: #e6e0e0;
   box-sizing: border-box;
+  // border-bottom: 2px solid #ccc;
 }
 .Books {
-  grid-area: container;
-  // background-color: var(--beige);
-  background-color: #cac5c5;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #cac5c5;
   font-size: calc(10px + 2vmin);
-  // background-color: #e6e0e0;
 
   header {
     border-bottom: 2px solid #ccc;
@@ -21,44 +20,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(20px + 2vmin);
-    color: rgb(31, 30, 30);
+    font-size: calc(10px + 2vmin);
+    color: rgb(41, 38, 38);
   }
   .container {
     display: column;
     justify-content: center;
-    // place-items: center;
+    place-items: center;
     width: 70%;
-    height: 77vh;
-    // border: 2px solid #ccc;
-    form {
-      margin-top: 20px;
-      margin-bottom: 30px;
-      height: 2rem;
-      width: 100%;
-    }
-    input {
-      width: 100%;
+    height: 82vh;
+    // border: 2px solid rgb(230, 81, 81);
+
+    .add {
+      width: 99%;
       height: 3rem;
+      margin: 2px;
       border-radius: 4px;
       font-size: 20px;
       text-align: center;
       border: 2px solid #ccc;
       background-color: #e6e0e0;
     }
-    .book-list {
-      width: 100%;
-      .book{
+    .book {
       position: relative;
       height: 3rem;
-      margin-bottom: 2px;
-      padding-left: 15px;
+      margin: 2px;
       border-radius: 4px;
       font-size: 20px;
-      color: #858585;
-      background-color: #e6e0e0;
+      // color: grey;
       border: 2px solid #ccc;
-    }
     }
     .icons {
       position: absolute;

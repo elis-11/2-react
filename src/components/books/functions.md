@@ -1,5 +1,5 @@
-//--- Step 1---
-//--- CREATE THE JSX--
+- Step 1---
+- CREATE THE JSX--
 
 ```
 import { FaEdit } from "react-icons/fa";
@@ -40,8 +40,8 @@ export const Books = () => {
   );
 };
 ```
---- Step 2---
---- Add Books
+- Step 2---
+- Add Books
 ```
 import { useState } from "react";
 
@@ -90,8 +90,8 @@ return (
 </div>
         )
 ```
---- step 3---
---- add localstorage -> useEffect
+- step 3---
+- add localstorage -> useEffect
 ```
   const [books, setBooks] = useState(() => {
     const savedBooks = localStorage.getItem("books");
@@ -105,8 +105,8 @@ return (
     localStorage.setItem("books", JSON.stringify(books));
   }, [books]);
 ```
---- step 4---
---- delete function
+- step 4---
+- delete function
 ```
 const handleDeleteClick=(id)=>{
   const removeItem =books.filter((book)=>{
@@ -122,9 +122,65 @@ const handleDeleteClick=(id)=>{
                   tabIndex="0"
                 />
 ```
---- step 5---
+- step 5---
+- Edit books
 
 ```
+  //1. Edit book
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentBook, setCurrentBook] = useState({});
+    // 2. Edit book
+  const handleEditInputChange = (e) => {
+    setCurrentBook({ ...currentBook, text: e.target.value });
+    console.log(currentBook);
+  };
+  // 3. Handle when a user clicks "Edit" button
+  const handleEditClick = (book) => {
+    setIsEditing(true);
+    setCurrentBook({ ...book });
+  };
+  // 4. Adding the updated text to the todos state
+  const handleUpdateBook = (id, updatedBook) => {
+    const updatedItem = books.map((book) => {
+      return book.id === id ? updatedBook : book;
+    });
+    setIsEditing(false);
+    setBooks(updatedItem);
+  };
+  // 5. Call the handleUpdateTodo function
+  const handleEditFormSubmit = (e) => {
+    e.preventDefault();
+    handleUpdateBook(currentBook.id, currentBook);
+  };
+        {isEditing ? (
+          <form className="edit-form"
+           onSubmit={handleEditFormSubmit}>
+            {/* <h2>Edit book</h2> */}
+            <label htmlFor="editBook"></label>
+            <input
+              name="editBook"
+              type="text"
+              placeholder="Edit book"
+              value={currentBook.text}
+              onChange={handleEditInputChange}
+            />
+            <button className="update" type="submit">Update</button>
+            <button className="cancel" onClick={() => setIsEditing(false)}>Cancel</button>
+          </form>
+        ) : (
+          <form onSubmit={handleFormSubmit}>
+            <input
+              className="add"
+              name="book"
+              type="text"
+              placeholder="Create a new Book"
+              value={book}
+              onChange={handleInputChange}
+            />
+          </form>
+        )}
+
+--
 ```
 --- step 6---
 

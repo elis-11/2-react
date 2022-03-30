@@ -18,10 +18,10 @@ export const Links = () => {
           Projects
         </NavLink>
         <NavLink
-          to="/about"
+          to="/books"
           className={(navData) => (navData.isActive ? "active" : "none")}
         >
-          About
+          Books
         </NavLink>
         <NavLink
           to="/users"

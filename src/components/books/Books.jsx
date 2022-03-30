@@ -4,7 +4,10 @@ import { FaTrashAlt } from "react-icons/fa";
 import "./Books.scss";
 
 export const Books = () => {
+
+  // Add books
   const [books, setBooks] = useState(() => {
+    // localStorage- savedItems- Books
     const savedBooks = localStorage.getItem("books");
     if (savedBooks) {
       return JSON.parse(savedBooks);
@@ -12,13 +15,15 @@ export const Books = () => {
       return [];
     }
   });
+  // Add books
   const [book, setBook] = useState("");
 
+    // localStorage- savedItems- Books
   useEffect(() => {
     localStorage.setItem("books", JSON.stringify(books));
   }, [books]);
 
-  //  Add functionality
+  // Add books
   const handleInputChange = (e) => {
     setBook(e.target.value);
   };

@@ -1,5 +1,6 @@
--Step 1---
----CREATE THE JSX--
+//--- Step 1---
+//--- CREATE THE JSX--
+
 ```
 import { FaEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
@@ -39,15 +40,15 @@ export const Books = () => {
   );
 };
 ```
-// ---Step 2---
-Add Books
+--- Step 2---
+--- Add Books
 ```
 import { useState } from "react";
 
 const [books, setBooks] = useState([]);
 const [book, setBook] = useState("");
 
-//  Add functionality
+--- 
 const handleInputChange = (e) => {
   setBook(e.target.value);
 };
@@ -61,13 +62,13 @@ const handleFormSubmit = (e) => {
   }
   setBook("");
 };
-//-------------
+---
 <form onSubmit={handleFormSubmit}>
 value={book}
           onChange={handleInputChange}
 
 </form>
-//------------
+---
 return (
     <div className="book-list">
 {books.map((book) => (
@@ -103,11 +104,23 @@ return (
   useEffect(() => {
     localStorage.setItem("books", JSON.stringify(books));
   }, [books]);
-
-
 ```
 --- step 4---
+--- delete function
 ```
+const handleDeleteClick=(id)=>{
+  const removeItem =books.filter((book)=>{
+    return book.id !== id
+  })
+  setBooks(removeItem)
+}
+---
+                      <FaTrashAlt
+                  className="icon"
+                  onClick={() => handleDeleteClick(book.id)}
+                  role="button"
+                  tabIndex="0"
+                />
 ```
 --- step 5---
 

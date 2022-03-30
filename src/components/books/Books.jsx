@@ -41,6 +41,13 @@ export const Books = () => {
     setBook("");
   };
 
+const handleDeleteClick=(id)=>{
+  const removeItem =books.filter((book)=>{
+    return book.id !== id
+  })
+  setBooks(removeItem)
+}
+
   return (
     <div className="Books">
       <header>
@@ -66,7 +73,7 @@ export const Books = () => {
                 <FaEdit className="icon" role="button" tabIndex="0" />
                 <FaTrashAlt
                   className="icon"
-                  // onClick={() => handleDeleteClick(book.id)}
+                  onClick={() => handleDeleteClick(book.id)}
                   role="button"
                   tabIndex="0"
                 />

@@ -83,8 +83,7 @@ export const Books = () => {
       </header>
       <div className="container">
         {isEditing ? (
-          <form className="edit-form"
-           onSubmit={handleEditFormSubmit}>
+          <form className="edit-form" onSubmit={handleEditFormSubmit}>
             {/* <h2>Edit book</h2> */}
             <label htmlFor="editBook"></label>
             <input
@@ -94,8 +93,12 @@ export const Books = () => {
               value={currentBook.text}
               onChange={handleEditInputChange}
             />
-            <button className="update" type="submit">Update</button>
-            <button className="cancel" onClick={() => setIsEditing(false)}>Cancel</button>
+            <button className="update" type="submit">
+              Update
+            </button>
+            <button className="cancel" onClick={() => setIsEditing(false)}>
+              Cancel
+            </button>
           </form>
         ) : (
           <form onSubmit={handleFormSubmit}>

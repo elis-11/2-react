@@ -30,6 +30,12 @@ export const Books = () => {
   const handleInputChange = (e) => {
     setBook(e.target.value);
   };
+  // 2. Edit book
+  const handleEditInputChange = (e) => {
+    setCurrentBook({ ...currentBook, text: e.target.value });
+    console.log(currentBook);
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (book !== "") {
@@ -45,6 +51,13 @@ export const Books = () => {
     setBook("");
   };
 
+    // 5. Call the handleUpdateTodo function
+    const handleEditFormSubmit = (e) => {
+      e.preventDefault();
+      handleUpdateBook(currentBook.id, currentBook);
+    };
+  
+
   const handleDeleteClick = (id) => {
     const removeItem = books.filter((book) => {
       return book.id !== id;
@@ -52,16 +65,6 @@ export const Books = () => {
     setBooks(removeItem);
   };
 
-  // 2. Edit book
-  const handleEditInputChange = (e) => {
-    setCurrentBook({ ...currentBook, text: e.target.value });
-    console.log(currentBook);
-  };
-  // 3. Handle when a user clicks "Edit" button
-  const handleEditClick = (book) => {
-    setIsEditing(true);
-    setCurrentBook({ ...book });
-  };
   // 4. Adding the updated text to the todos state
   const handleUpdateBook = (id, updatedBook) => {
     const updatedItem = books.map((book) => {
@@ -70,12 +73,13 @@ export const Books = () => {
     setIsEditing(false);
     setBooks(updatedItem);
   };
-  // 5. Call the handleUpdateTodo function
-  const handleEditFormSubmit = (e) => {
-    e.preventDefault();
-    handleUpdateBook(currentBook.id, currentBook);
-  };
 
+  // 3. Handle when a user clicks "Edit" button
+  const handleEditClick = (book) => {
+    setIsEditing(true);
+    setCurrentBook({ ...book });
+  };
+  
   return (
     <div className="Books">
       <header>

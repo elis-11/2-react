@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 import { Navbar } from "../layout/Navbar";
-import { Home } from "../home/Home";
+import { Profile } from "../profile/Profile";
 import { Books } from "../books/Books";
 import { Projects } from "../projects/Projects";
 import { Users } from "../users/Users";
@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="projects" element={<Projects />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="books" element={<Books />} />
         <Route path="users" element={<Users />} />
         <Route path="work/*" element={<Work />} />
@@ -30,7 +30,7 @@ function App() {
         <Route path="hooks/*" element={<Hooks />} />
         <Route path="new/*" element={<New />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Projects />} />
       </Routes>
     </div>
   );

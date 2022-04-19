@@ -15,7 +15,7 @@ export const Form = () => {
 
   const [password1, setPassword1] = useState([]);
   const [password1IsValid, setPassword1IsValid] = useState(false);
-  const [passwordsInputType, setPasswordsInputType] = useState("psaaword");
+  const [passwordsInputType, setPasswordsInputType] = useState("password");
 
   const [password2, setPassword2] = useState([]);
   const [password2IsValid, setPassword2IsValid] = useState(false);
@@ -88,7 +88,7 @@ export const Form = () => {
 
   const handlePassword2 = (e) => {
     let _password2 = e.target.value;
-    _password2.length >= 3
+    _password2.length >= 5
       ? setPassword2IsValid(true)
       : setPassword2IsValid(false);
     setPassword2(_password2);
@@ -166,7 +166,7 @@ export const Form = () => {
             />
           </div>
           <div className={`note ${phoneIsValid ? "valid" : "invalid"}`}>
-            e.g. 5553332222
+            e.g. +49 653 873 635
           </div>
 
           {/* PASSWORD-1 */}

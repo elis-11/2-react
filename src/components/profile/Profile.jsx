@@ -1,8 +1,8 @@
 // import { Link } from "react-router-dom";
 import React from "react";
-import "./Home.scss";
+import "./Profile.scss";
 
-export const Home = () => {
+export const Profile = () => {
   return (
     <div className="Home content">
       <h2>Profile</h2>

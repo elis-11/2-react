@@ -1,8 +1,8 @@
 import "./New.scss";
 
 export const New = () => {
-  const handleNameChange = () => {
-    const name = ["Rob", "Bob", "Elis"];
+  const changeName = () => {
+    const name = ["Ralf", "Bob","Luis", "Elis"];
     const int = Math.floor(Math.random() * name.length);
     return name[int];
   };
@@ -10,7 +10,7 @@ export const New = () => {
   return (
     <div className="New">
       New
-      <p>Hallo {handleNameChange()}!</p>
+      <p>Hallo {changeName()}!</p>
     </div>
   );
 };
